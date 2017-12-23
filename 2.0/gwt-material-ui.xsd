@@ -178,7 +178,7 @@
     </xs:group>
 
     <!--UIObject-->
-    <xs:complexType name="UIObject">
+    <xs:complexType name="UIObject" mixed="true">
         <xs:choice minOccurs="0" maxOccurs="unbounded">
             <xs:group ref="WidgetGroup" />
         </xs:choice>
@@ -196,7 +196,7 @@
     </xs:complexType>
 
     <!--Material Widget-->
-    <xs:complexType name="MaterialWidget">
+    <xs:complexType name="MaterialWidget" mixed="true">
         <xs:complexContent>
             <xs:extension base="UIObject" >
                 <xs:attribute name="accessKey" type="xs:string" />
@@ -344,6 +344,7 @@
         </xs:complexContent>
     </xs:complexType>
 
+
     <!--Material Widgets-->
 
     <xs:complexType name="MaterialAnchorButton" mixed="true">
@@ -379,6 +380,7 @@
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
                 <xs:attribute name="axis" type="Axis" />
+                <xs:attribute name="grid" type="xs:string" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -414,12 +416,12 @@
     <xs:complexType name="MaterialCardTitle" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
-                <xs:attribute name="text" type="xs:string" />
                 <xs:attribute name="iconColor" type="Colors" />
                 <xs:attribute name="iconPosition" type="IconPosition" />
                 <xs:attribute name="iconPrefix" type="xs:boolean" />
                 <xs:attribute name="iconSize" type="IconSize" />
                 <xs:attribute name="iconType" type="IconType" />
+                <xs:attribute name="text" type="xs:string" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -496,7 +498,7 @@
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
                 <xs:attribute name="avatar" type="xs:boolean" />
-                <xs:attribute name="dismissable" type="xs:boolean" />
+                <xs:attribute name="dismissible" type="xs:boolean" />
                 <xs:attribute name="type" type="CollectionType" />
             </xs:extension>
         </xs:complexContent>
@@ -628,10 +630,12 @@
     <xs:complexType name="MaterialImage" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
+                <xs:attribute name="activates" type="xs:string" />
                 <xs:attribute name="caption" type="xs:string" />
+                <xs:attribute name="resource" type="xs:string" />
                 <xs:attribute name="type" type="ImageType" />
                 <xs:attribute name="url" type="xs:string" />
-                <xs:attribute name="resource" type="xs:string" />
+                <xs:attribute name="value" type="xs:string" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -702,7 +706,7 @@
     <xs:complexType name="MaterialModal" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
-                <xs:attribute name="dismissable" type="xs:boolean" />
+                <xs:attribute name="dismissible" type="xs:boolean" />
                 <xs:attribute name="inDuration" type="xs:integer" />
                 <xs:attribute name="opacity" type="xs:double" />
                 <xs:attribute name="outDuration" type="xs:integer" />
@@ -731,7 +735,14 @@
             <xs:extension base="MaterialWidget">
                 <xs:attribute name="activates" type="xs:string" />
                 <xs:attribute name="percent" type="xs:double" />
-                <xs:attribute name="type" type="NavBarType" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="MaterialNavBarShrink" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialNavBar">
+                <xs:attribute name="offset" type="xs:integer" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -743,6 +754,21 @@
                 <xs:attribute name="position" type="Position" />
                 <xs:attribute name="target" type="xs:string" />
                 <xs:attribute name="text" type="xs:string" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="MaterialNavContent" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="MaterialNavMenu" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialLink">
+                <xs:attribute name="activates" type="xs:string" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -807,6 +833,7 @@
     <xs:complexType name="MaterialProgress" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
+                <xs:attribute name="color" type="Colors" />
                 <xs:attribute name="percent" type="xs:double" />
                 <xs:attribute name="type" type="ProgressType" />
             </xs:extension>
@@ -924,7 +951,7 @@
     <xs:complexType name="MaterialSpinner" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
-                <xs:attribute name="color" type="Colors" />
+                <xs:attribute name="color" type="SpinnerColor" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -1098,14 +1125,14 @@
     </xs:simpleType>
 
     <!--SideNavType-->
-    <xs:simpleType name="SideNavType">
+<!--    <xs:simpleType name="SideNavType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="CARD" />
             <xs:enumeration value="PUSH" />
             <xs:enumeration value="MINI" />
             <xs:enumeration value="FIXED" />
         </xs:restriction>
-    </xs:simpleType>
+    </xs:simpleType>-->
 
     <!--Edge-->
     <xs:simpleType name="Edge">
@@ -2549,6 +2576,20 @@
             <xs:enumeration value="RED_ACCENT_2" />
             <xs:enumeration value="RED_ACCENT_3" />
             <xs:enumeration value="RED_ACCENT_4" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--SpinnerColor-->
+    <xs:simpleType name="SpinnerColor">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BLUE" />
+            <xs:enumeration value="BLUE_ONLY" />
+            <xs:enumeration value="GREEN" />
+            <xs:enumeration value="GREEN_ONLY" />
+            <xs:enumeration value="RED" />
+            <xs:enumeration value="RED_ONLY" />
+            <xs:enumeration value="YELLOW" />
+            <xs:enumeration value="YELLOW_ONLY" />
         </xs:restriction>
     </xs:simpleType>
 
