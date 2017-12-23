@@ -1,0 +1,371 @@
+<?xml version="1.0"?>
+
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:import:gwt.material.design.client.ui.html"
+    xmlns="urn:import:gwt.material.design.client.ui.html"
+    elementFormDefault="qualified">
+
+    <!--elements declaration-->
+    <xs:element name="Anchor" type="Anchor" />
+    <xs:element name="Br" type="Br" />
+    <xs:element name="ClearFix" type="ClearFix" />
+    <xs:element name="Code" type="Code" />
+    <xs:element name="DateInput" type="DateInput" />
+    <xs:element name="Div" type="Div" />
+    <xs:element name="Footer" type="Footer" />
+    <xs:element name="Header" type="Header" />
+    <xs:element name="Heading" type="Heading" />
+    <xs:element name="Hr" type="Hr" />
+    <xs:element name="Icon" type="Icon" />
+    <xs:element name="Italic" type="Italic" />
+    <xs:element name="Label" type="Label" />
+    <xs:element name="ListItem" type="ListItem" />
+    <xs:element name="Main" type="Main" />
+    <xs:element name="Nav" type="Nav" />
+    <xs:element name="Option" type="Option" />
+    <xs:element name="Paragraph" type="Paragraph" />
+    <xs:element name="Pre" type="Pre" />
+    <xs:element name="Small" type="Small" />
+    <xs:element name="Span" type="Span" />
+    <xs:element name="Strong" type="Strong" />
+    <xs:element name="Text" type="Text" />
+    <xs:element name="UnorderedList" type="UnorderedList" />
+    
+    <!--Widget Group-->
+    <xs:group name="WidgetGroup">
+        <xs:choice>
+            <xs:element name="Anchor" type="Anchor" />
+            <xs:element name="Br" type="Br" />
+            <xs:element name="ClearFix" type="ClearFix" />
+            <xs:element name="Code" type="Code" />
+            <xs:element name="DateInput" type="DateInput" />
+            <xs:element name="Div" type="Div" />
+            <xs:element name="Footer" type="Footer" />
+            <xs:element name="Header" type="Header" />
+            <xs:element name="Heading" type="Heading" />
+            <xs:element name="Hr" type="Hr" />
+            <xs:element name="Icon" type="Icon" />
+            <xs:element name="Italic" type="Italic" />
+            <xs:element name="Label" type="Label" />
+            <xs:element name="ListItem" type="ListItem" />
+            <xs:element name="Main" type="Main" />
+            <xs:element name="Nav" type="Nav" />
+            <xs:element name="Option" type="Option" />
+            <xs:element name="Paragraph" type="Paragraph" />
+            <xs:element name="Pre" type="Pre" />
+            <xs:element name="Small" type="Small" />
+            <xs:element name="Span" type="Span" />
+            <xs:element name="Strong" type="Strong" />
+            <xs:element name="Text" type="Text" />
+            <xs:element name="UnorderedList" type="UnorderedList" />
+            <xs:any processContents="lax" />
+        </xs:choice>
+    </xs:group>
+    
+
+    <!--Widgets-->
+
+    <xs:complexType name="Anchor" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Br" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ClearFix" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="Code" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="DateInput" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="Div" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="Footer" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="Header" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="Heading" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="Hr" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="Icon" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="Italic" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="Label" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="ListItem" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+                                    
+    <xs:complexType name="Main" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+                                    
+    <xs:complexType name="Nav" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+                                    
+    <xs:complexType name="Option" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+                                    
+    <xs:complexType name="Paragraph" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+                                    
+    <xs:complexType name="Pre" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+                                    
+    <xs:complexType name="Small" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+                                    
+    <xs:complexType name="Span" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+                                    
+    <xs:complexType name="Strong" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+                                    
+    <xs:complexType name="Text" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+                                    
+    <xs:complexType name="UnorderedList" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+    <!--UIObject--> 
+    <xs:complexType name="UIObject">
+         <!--Basic attributes--> 
+        <xs:attribute name="ui:field" type="xs:string" />
+        <xs:attribute name="visible" type="xs:boolean" />
+         <!--stylesheet attributes--> 
+        <xs:attribute name="styleName" type="xs:string" />
+        <xs:attribute name="stylePrimaryName" type="xs:string" />
+        <xs:attribute name="addStyleNames" type="xs:string" />
+        <xs:anyAttribute processContents="lax" />
+    </xs:complexType>
+    
+    <!--Material Widget-->
+    <xs:complexType name="MaterialWidget">
+        <xs:complexContent>
+            <xs:extension base="UIObject" >
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:group ref="WidgetGroup" />
+                </xs:choice>
+                <xs:attribute name="accessKey" type="xs:string" />
+                <xs:attribute name="backgroundColor" type="xs:string" />
+                <xs:attribute name="bottom" type="xs:double" />
+                <xs:attribute name="circle" type="xs:double" />
+                <xs:attribute name="depth" type="xs:integer" />
+                <xs:attribute name="enabled" type="xs:boolean" />
+                <xs:attribute name="forcus" type="xs:boolean" />
+                <xs:attribute name="fontSize" type="xs:string" />
+                <xs:attribute name="grid" type="xs:string" />
+                <xs:attribute name="hoverable" type="xs:boolean" />
+                <xs:attribute name="hideOn" type="HideOn" />                
+                <xs:attribute name="m:id" type="xs:string" />
+                <xs:attribute name="layoutPosition" type="StylePosition" />                
+                <xs:attribute name="left" type="xs:double" />
+                <xs:attribute name="margin" type="xs:double" />
+                <xs:attribute name="marginBottom" type="xs:double" />
+                <xs:attribute name="marginLeft" type="xs:double" />
+                <xs:attribute name="marginRight" type="xs:double" />
+                <xs:attribute name="marginTop" type="xs:double" />                
+                <xs:attribute name="opacity" type="xs:double" />
+                <xs:attribute name="padding" type="xs:double" />
+                <xs:attribute name="paddingBottom" type="xs:double" />
+                <xs:attribute name="paddingLeft" type="xs:double" />
+                <xs:attribute name="paddingRight" type="xs:double" />
+                <xs:attribute name="paddingTop" type="xs:double" />                
+                <xs:attribute name="right" type="xs:double" />
+                <xs:attribute name="scrollSpy" type="xs:string" />
+                <xs:attribute name="separator" type="xs:boolean" />
+                <xs:attribute name="shadow" type="xs:boolean" />
+                <xs:attribute name="showOn" type="ShowOn" />                
+                <xs:attribute name="tabIndex" type="xs:integer" />
+                <xs:attribute name="textAlign" type="TextAlign" />
+                <xs:attribute name="textColor" type="xs:string" />
+                <xs:attribute name="tooltip" type="xs:string" />
+                <xs:attribute name="tooltipDelayMs" type="xs:integer" />
+                <xs:attribute name="tooltipPosition" type="Position" />
+                <xs:attribute name="top" type="xs:double" />
+                <xs:attribute name="truncate" type="xs:boolean" />
+                <xs:attribute name="waves" type="WavesType" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+                                                                                                            
+    <!--Enums-->
+    
+    <!--Position-->
+    <xs:simpleType name="StylePosition">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ABSOLUTE" />
+            <xs:enumeration value="FIXED" />
+            <xs:enumeration value="RELATIVE" />
+            <xs:enumeration value="STATIC" />
+        </xs:restriction>        
+    </xs:simpleType>
+    
+    <!--HideOn-->
+    <xs:simpleType name="HideOn">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NONE" />
+            <xs:enumeration value="HIDE_ON_LARGE" />
+            <xs:enumeration value="HIDE_ON_MED" />
+            <xs:enumeration value="HIDE_ON_MED_DOWN" />
+            <xs:enumeration value="HIDE_ON_MED_UP" />
+            <xs:enumeration value="HIDE_ON_SMALL" />
+            <xs:enumeration value="HIDE_ON_SMALL_DOWN" />            
+        </xs:restriction>        
+    </xs:simpleType>
+
+    <!--ShowOn-->
+    <xs:simpleType name="ShowOn">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NONE" />
+            <xs:enumeration value="SHOW_ON_LARGE" />
+            <xs:enumeration value="SHOW_ON_MED" />
+            <xs:enumeration value="SHOW_ON_MED_DOWN" />
+            <xs:enumeration value="SHOW_ON_MED_UP" />
+            <xs:enumeration value="SHOW_ON_SMALL" />
+        </xs:restriction>        
+    </xs:simpleType>
+    
+    <!--Text align-->
+    <xs:simpleType name="TextAlign">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CENTER" />
+            <xs:enumeration value="DEFAULT" />
+            <xs:enumeration value="LEFT" />
+            <xs:enumeration value="RIGHT" />
+        </xs:restriction>        
+    </xs:simpleType>
+
+    <!--Position-->
+    <xs:simpleType name="Position">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BOTTOM" />
+            <xs:enumeration value="LEFT" />
+            <xs:enumeration value="RIGHT" />
+            <xs:enumeration value="TOP" />
+        </xs:restriction>        
+    </xs:simpleType>
+
+    <!--WavesType-->
+    <xs:simpleType name="WavesType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DEFAULT" />
+            <xs:enumeration value="GREEN" />
+            <xs:enumeration value="LIGHT" />
+            <xs:enumeration value="ORANGE" />
+            <xs:enumeration value="PURPLE" />
+            <xs:enumeration value="RED" />
+            <xs:enumeration value="TEAL" />
+            <xs:enumeration value="YELLOW" />
+        </xs:restriction>        
+    </xs:simpleType>
+
+</xs:schema>

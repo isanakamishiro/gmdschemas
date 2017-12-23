@@ -1,0 +1,1523 @@
+<?xml version="1.0"?>
+
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:import:gwt.material.design.addins.client"
+    xmlns="urn:import:gwt.material.design.addins.client"
+    elementFormDefault="qualified">
+
+    <!--elements declaration-->
+    <xs:element name="autocomplete.MaterialAutoComplete" type="autocomplete.MaterialAutoComplete" />
+    <xs:element name="cutout.MaterialCutOut" type="cutout.MaterialCutOut" />
+    <xs:element name="overlay.MaterialOverlay" type="overlay.MaterialOverlay" />
+
+    <xs:group name="WidgetGroup">
+        <xs:choice>
+            <xs:element name="autocomplete.MaterialAutoComplete" type="autocomplete.MaterialAutoComplete" />
+            <xs:element name="cutout.MaterialCutOut" type="cutout.MaterialCutOut" />
+            <xs:element name="overlay.MaterialOverlay" type="overlay.MaterialOverlay" />
+            <xs:any processContents="lax" />
+        </xs:choice>
+    </xs:group>
+
+
+    <!--Material Widgets-->
+
+    <xs:complexType name="autocomplete.MaterialAutoComplete" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+                <xs:attribute name="directInputAllowed" type="xs:boolean" />
+                <xs:attribute name="error" type="xs:string" />
+                <xs:attribute name="limit" type="xs:integer" />
+                <xs:attribute name="percent" type="xs:percent" />
+                <xs:attribute name="placeholder" type="xs:string" />
+                <xs:attribute name="success" type="xs:string" />
+                <xs:attribute name="type" type="AutocompleteType" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="cutout.MaterialCutOut" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+                <xs:attribute name="animated" type="xs:boolean" />
+                <xs:attribute name="animationDuration" type="xs:string" />
+                <xs:attribute name="animationTimingFunction" type="xs:string" />
+                <xs:attribute name="backgroundColor" type="xs:string" />
+                <xs:attribute name="backgroundSize" type="xs:string" />
+                <xs:attribute name="circle" type="xs:boolean" />
+                <xs:attribute name="opacity" type="xs:double" />
+                <xs:attribute name="cutOutPadding" type="xs:integer" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="overlay.MaterialOverlay" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="sideprofile.MaterialSideProfile" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+                <xs:attribute name="url" type="xs:string" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="waterfall.MaterialWaterfall" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+                <xs:attribute name="offset" type="xs:double" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="iconmorph.MaterialIconMorph" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+                <xs:attribute name="iconSize" type="IconSize" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+    <!--Enums-->
+    <xs:simpleType name="AutocompleteType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CHIP" />
+            <xs:enumeration value="TEXT" />
+        </xs:restriction>
+    </xs:simpleType>
+
+
+
+
+    <!-- Ref for Material Widgets -->
+    <!--UIObject-->
+    <xs:complexType name="UIObject">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="WidgetGroup" />
+        </xs:choice>
+
+        <!--Basic attributes-->
+        <xs:attribute name="ui:field" type="xs:string" />
+        <xs:attribute name="visible" type="xs:boolean" />
+        <!--stylesheet attributes-->
+        <xs:attribute name="styleName" type="xs:string" />
+        <xs:attribute name="stylePrimaryName" type="xs:string" />
+        <xs:attribute name="addStyleNames" type="xs:string" />
+        <xs:attribute name="height" type="xs:string" />
+        <xs:attribute name="width" type="xs:string" />
+        <xs:anyAttribute processContents="lax" />
+    </xs:complexType>
+
+    <!--Material Widget-->
+    <xs:complexType name="MaterialWidget">
+        <xs:complexContent>
+            <xs:extension base="UIObject" >
+                <xs:attribute name="accessKey" type="xs:string" />
+                <xs:attribute name="backgroundColor" type="xs:string" />
+                <xs:attribute name="bottom" type="xs:double" />
+                <xs:attribute name="circle" type="xs:double" />
+                <xs:attribute name="depth" type="xs:integer" />
+                <xs:attribute name="enabled" type="xs:boolean" />
+                <xs:attribute name="forcus" type="xs:boolean" />
+                <xs:attribute name="fontSize" type="xs:string" />
+                <xs:attribute name="fontWeight" type="StyleFontWeight" />
+                <xs:attribute name="float" type="StyleFloat" />
+                <xs:attribute name="grid" type="xs:string" />
+                <xs:attribute name="hoverable" type="xs:boolean" />
+                <xs:attribute name="hideOn" type="HideOn" />
+                <xs:attribute name="m:id" type="xs:string" />
+                <xs:attribute name="layoutPosition" type="StylePosition" />
+                <xs:attribute name="left" type="xs:double" />
+                <xs:attribute name="margin" type="xs:double" />
+                <xs:attribute name="marginBottom" type="xs:double" />
+                <xs:attribute name="marginLeft" type="xs:double" />
+                <xs:attribute name="marginRight" type="xs:double" />
+                <xs:attribute name="marginTop" type="xs:double" />
+                <xs:attribute name="opacity" type="xs:double" />
+                <xs:attribute name="overflow" type="StyleOverflow" />
+                <xs:attribute name="padding" type="xs:double" />
+                <xs:attribute name="paddingBottom" type="xs:double" />
+                <xs:attribute name="paddingLeft" type="xs:double" />
+                <xs:attribute name="paddingRight" type="xs:double" />
+                <xs:attribute name="paddingTop" type="xs:double" />
+                <xs:attribute name="right" type="xs:double" />
+                <xs:attribute name="scrollSpy" type="xs:string" />
+                <xs:attribute name="separator" type="xs:boolean" />
+                <xs:attribute name="shadow" type="xs:boolean" />
+                <xs:attribute name="showOn" type="ShowOn" />
+                <xs:attribute name="tabIndex" type="xs:integer" />
+                <xs:attribute name="textAlign" type="TextAlign" />
+                <xs:attribute name="textColor" type="xs:string" />
+                <xs:attribute name="tooltip" type="xs:string" />
+                <xs:attribute name="tooltipDelayMs" type="xs:integer" />
+                <xs:attribute name="tooltipPosition" type="Position" />
+                <xs:attribute name="top" type="xs:double" />
+                <xs:attribute name="truncate" type="xs:boolean" />
+                <xs:attribute name="visibility" type="StyleVisibility" />
+                <xs:attribute name="waves" type="WavesType" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!--AbstractButton-->
+    <xs:complexType name="AbstractButton" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+                <xs:attribute name="activates" type="xs:string" />
+                <xs:attribute name="href" type="xs:string" />
+                <xs:attribute name="size" type="ButtonSize" />
+                <xs:attribute name="target" type="xs:string" />
+                <xs:attribute name="targetHistoryToken" type="xs:string" />
+                <xs:attribute name="text" type="xs:string" />
+                <xs:attribute name="type" type="ButtonType" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!--AbstractIconButton-->
+    <xs:complexType name="AbstractIconButton" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="AbstractButton">
+                <xs:attribute name="iconColor" type="xs:string" />
+                <xs:attribute name="iconPosition" type="IconPosition" />
+                <xs:attribute name="iconPrefix" type="xs:boolean" />
+                <xs:attribute name="iconSize" type="IconSize" />
+                <xs:attribute name="iconType" type="IconType" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="BaseCheckBox" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="UIObject">
+                <xs:attribute name="accessKey" type="xs:string" />
+                <xs:attribute name="directionEstimator" type="xs:boolean" />
+                <xs:attribute name="enabled" type="xs:boolean" />
+                <xs:attribute name="forcus" type="xs:boolean" />
+                <xs:attribute name="html" type="xs:string" />
+                <xs:attribute name="name" type="xs:string" />
+                <xs:attribute name="tabIndex" type="xs:integer" />
+                <xs:attribute name="text" type="xs:string" />
+                <xs:attribute name="value" type="xs:boolean" />
+                <xs:attribute name="wordWrap" type="xs:boolean" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="MaterialValueBox" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+                <xs:attribute name="accessKey" type="xs:string" />
+                <xs:attribute name="directionEstimator" type="xs:boolean" />
+                <xs:attribute name="enabled" type="xs:boolean" />
+                <xs:attribute name="forcus" type="xs:boolean" />
+                <xs:attribute name="iconColor" type="xs:string" />
+                <xs:attribute name="iconPosition" type="IconPosition" />
+                <xs:attribute name="iconPrefix" type="xs:boolean" />
+                <xs:attribute name="iconSize" type="IconSize" />
+                <xs:attribute name="iconType" type="IconType" />
+                <xs:attribute name="length" type="xs:integer" />
+                <xs:attribute name="name" type="xs:string" />
+                <xs:attribute name="placeholder" type="xs:string" />
+                <xs:attribute name="tabIndex" type="xs:integer" />
+                <xs:attribute name="text" type="xs:string" />
+                <xs:attribute name="length" type="xs:integer" />
+                <xs:attribute name="type" type="InputType" />
+                <xs:attribute name="valid" type="xs:boolean" />
+                <xs:attribute name="value" type="xs:string" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="MaterialNumberBox" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialValueBox">
+                <xs:attribute name="max" type="xs:string" />
+                <xs:attribute name="min" type="xs:string" />
+                <xs:attribute name="step" type="xs:string" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ValueBoxBase" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+                <xs:attribute name="backgroundColor" type="xs:string" />
+                <xs:attribute name="enabled" type="xs:boolean" />
+                <xs:attribute name="grid" type="xs:string" />
+                <xs:attribute name="m:id" type="xs:string" />
+                <xs:attribute name="offset" type="xs:string" />
+                <xs:attribute name="placeholder" type="xs:string" />
+                <xs:attribute name="textColor" type="xs:string" />
+                <xs:attribute name="cursorPos" type="xs:integer" />
+                <xs:attribute name="readOnly" type="xs:boolean" />
+                <xs:attribute name="text" type="xs:string" />
+                <xs:attribute name="value" type="xs:string" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!--Enums-->
+    <xs:simpleType name="StyleVisibility">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="HIDDEN" />
+            <xs:enumeration value="VISIBLE" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="StyleFontWeight">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BOLD" />
+            <xs:enumeration value="BOLDER" />
+            <xs:enumeration value="LIGHTER" />
+            <xs:enumeration value="NORMAL" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="StyleFloat">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LEFT" />
+            <xs:enumeration value="NONE" />
+            <xs:enumeration value="RIGHT" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CollectionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AVATAR" />
+            <xs:enumeration value="CHECKBOX" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="StyleOverflow">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AUTO" />
+            <xs:enumeration value="HIDDEN" />
+            <xs:enumeration value="SCROLL" />
+            <xs:enumeration value="VISIBLE" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Position-->
+    <xs:simpleType name="StylePosition">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ABSOLUTE" />
+            <xs:enumeration value="FIXED" />
+            <xs:enumeration value="RELATIVE" />
+            <xs:enumeration value="STATIC" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--HideOn-->
+    <xs:simpleType name="HideOn">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NONE" />
+            <xs:enumeration value="HIDE_ON_LARGE" />
+            <xs:enumeration value="HIDE_ON_MED" />
+            <xs:enumeration value="HIDE_ON_MED_DOWN" />
+            <xs:enumeration value="HIDE_ON_MED_UP" />
+            <xs:enumeration value="HIDE_ON_SMALL" />
+            <xs:enumeration value="HIDE_ON_SMALL_DOWN" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--ShowOn-->
+    <xs:simpleType name="ShowOn">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NONE" />
+            <xs:enumeration value="SHOW_ON_LARGE" />
+            <xs:enumeration value="SHOW_ON_MED" />
+            <xs:enumeration value="SHOW_ON_MED_DOWN" />
+            <xs:enumeration value="SHOW_ON_MED_UP" />
+            <xs:enumeration value="SHOW_ON_SMALL" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--TabType-->
+    <xs:simpleType name="TabType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DEFAULT" />
+            <xs:enumeration value="ICON" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--SideNavType-->
+    <xs:simpleType name="SideNavType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CARD" />
+            <xs:enumeration value="PUSH" />
+            <xs:enumeration value="MINI" />
+            <xs:enumeration value="FIXED" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Edge-->
+    <xs:simpleType name="Edge">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GAP" />
+            <xs:enumeration value="NO_GAP" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--RadioButtonType-->
+    <xs:simpleType name="RadioButtonType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GAP" />
+            <xs:enumeration value="NO_GAP" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--ProgressType-->
+    <xs:simpleType name="ProgressType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DETERMINATE" />
+            <xs:enumeration value="INDETERMINATE" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--LoaderSize-->
+    <xs:simpleType name="LoaderSize">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BIG" />
+            <xs:enumeration value="MEDIUM" />
+            <xs:enumeration value="SMALL" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--NavBarType-->
+    <xs:simpleType name="NavBarType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="FIXED" />
+            <xs:enumeration value="SHRINK" />
+            <xs:enumeration value="TALL" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--ModalType-->
+    <xs:simpleType name="ModalType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BOTTOM_SHEET" />
+            <xs:enumeration value="DEFAULT" />
+            <xs:enumeration value="FIXED_FOOTER" />
+            <xs:enumeration value="WINDOW" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--ImageType-->
+    <xs:simpleType name="ImageType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CIRCLE" />
+            <xs:enumeration value="DEFAULT" />
+            <xs:enumeration value="MATERIALBOXED" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--FooterType-->
+    <xs:simpleType name="FooterType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DEFAULT" />
+            <xs:enumeration value="FIXED" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--FABType-->
+    <xs:simpleType name="FABType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CLICK_ONLY" />
+            <xs:enumeration value="HOVER" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Alignment-->
+    <xs:simpleType name="Alignment">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CENTER" />
+            <xs:enumeration value="DEFAULT" />
+            <xs:enumeration value="LEFT" />
+            <xs:enumeration value="RIGHT" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--InputType-->
+    <xs:simpleType name="InputType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CHECKBOX" />
+            <xs:enumeration value="COLOR" />
+            <xs:enumeration value="DATE" />
+            <xs:enumeration value="DATETIME" />
+            <xs:enumeration value="DATETIME_LOCAL" />
+            <xs:enumeration value="EMAIL" />
+            <xs:enumeration value="FILE" />
+            <xs:enumeration value="MONTH" />
+            <xs:enumeration value="NUMBER" />
+            <xs:enumeration value="PASSWORD" />
+            <xs:enumeration value="RANGE" />
+            <xs:enumeration value="SEARCH" />
+            <xs:enumeration value="TEL" />
+            <xs:enumeration value="TEXT" />
+            <xs:enumeration value="TIME" />
+            <xs:enumeration value="URL" />
+            <xs:enumeration value="WEEK" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Orientation-->
+    <xs:simpleType name="Orientation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LANDSCAPE" />
+            <xs:enumeration value="PORTRAIT" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--MaterialDatePickerType-->
+    <xs:simpleType name="MaterialDatePickerType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DAY" />
+            <xs:enumeration value="MONTH_DAY" />
+            <xs:enumeration value="YEAR" />
+            <xs:enumeration value="YEAR_MONTH_DAY" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--CollapsibleType-->
+    <xs:simpleType name="CollapsibleType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="FLAT" />
+            <xs:enumeration value="POPOUT" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--CheckBoxType-->
+    <xs:simpleType name="CheckBoxType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="FILLED" />
+            <xs:enumeration value="INTERMEDIATE" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Axis-->
+    <xs:simpleType name="Axis">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="HORIZONTAL" />
+            <xs:enumeration value="VERTICAL" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Text align-->
+    <xs:simpleType name="TextAlign">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CENTER" />
+            <xs:enumeration value="DEFAULT" />
+            <xs:enumeration value="LEFT" />
+            <xs:enumeration value="RIGHT" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Position-->
+    <xs:simpleType name="Position">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BOTTOM" />
+            <xs:enumeration value="LEFT" />
+            <xs:enumeration value="RIGHT" />
+            <xs:enumeration value="TOP" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--WavesType-->
+    <xs:simpleType name="WavesType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DEFAULT" />
+            <xs:enumeration value="GREEN" />
+            <xs:enumeration value="LIGHT" />
+            <xs:enumeration value="ORANGE" />
+            <xs:enumeration value="PURPLE" />
+            <xs:enumeration value="RED" />
+            <xs:enumeration value="TEAL" />
+            <xs:enumeration value="YELLOW" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--ButtonSize-->
+    <xs:simpleType name="ButtonSize">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LARGE" />
+            <xs:enumeration value="MEDIUM" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--ButtonType-->
+    <xs:simpleType name="ButtonType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="FLAT" />
+            <xs:enumeration value="FLOATING" />
+            <xs:enumeration value="LINK" />
+            <xs:enumeration value="RAISED" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--IconPosition-->
+    <xs:simpleType name="IconPosition">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LEFT" />
+            <xs:enumeration value="NONE" />
+            <xs:enumeration value="RIGHT" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--IconSize-->
+    <xs:simpleType name="IconSize">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LARGE" />
+            <xs:enumeration value="MEDIUM" />
+            <xs:enumeration value="SMALL" />
+            <xs:enumeration value="TINY" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--IconType-->
+    <xs:simpleType name="IconType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AC_UNIT" />
+            <xs:enumeration value="ACCESS_ALARM" />
+            <xs:enumeration value="ACCESS_ALARMS" />
+            <xs:enumeration value="ACCESS_TIME" />
+            <xs:enumeration value="ACCESSIBILITY" />
+            <xs:enumeration value="ACCESSIBLE" />
+            <xs:enumeration value="ACCOUNT_BALANCE" />
+            <xs:enumeration value="ACCOUNT_BALANCE_WALLET" />
+            <xs:enumeration value="ACCOUNT_BOX" />
+            <xs:enumeration value="ACCOUNT_CIRCLE" />
+            <xs:enumeration value="ADB" />
+            <xs:enumeration value="ADD" />
+            <xs:enumeration value="ADD_A_PHOTO" />
+            <xs:enumeration value="ADD_ALARM" />
+            <xs:enumeration value="ADD_ALERT" />
+            <xs:enumeration value="ADD_BOX" />
+            <xs:enumeration value="ADD_CIRCLE" />
+            <xs:enumeration value="ADD_CIRCLE_OUTLINE" />
+            <xs:enumeration value="ADD_LOCATION" />
+            <xs:enumeration value="ADD_SHOPPING_CART" />
+            <xs:enumeration value="ADD_TO_PHOTOS" />
+            <xs:enumeration value="ADD_TO_QUEUE" />
+            <xs:enumeration value="ADJUST" />
+            <xs:enumeration value="AIRLINE_SEAT_FLAT" />
+            <xs:enumeration value="AIRLINE_SEAT_FLAT_ANGLED" />
+            <xs:enumeration value="AIRLINE_SEAT_INDIVIDUAL_SUITE" />
+            <xs:enumeration value="AIRLINE_SEAT_LEGROOM_EXTRA" />
+            <xs:enumeration value="AIRLINE_SEAT_LEGROOM_NORMAL" />
+            <xs:enumeration value="AIRLINE_SEAT_LEGROOM_REDUCED" />
+            <xs:enumeration value="AIRLINE_SEAT_RECLINE_EXTRA" />
+            <xs:enumeration value="AIRLINE_SEAT_RECLINE_NORMAL" />
+            <xs:enumeration value="AIRPLANEMODE_ACTIVE" />
+            <xs:enumeration value="AIRPLANEMODE_INACTIVE" />
+            <xs:enumeration value="AIRPLAY" />
+            <xs:enumeration value="AIRPORT_SHUTTLE" />
+            <xs:enumeration value="ALARM" />
+            <xs:enumeration value="ALARM_ADD" />
+            <xs:enumeration value="ALARM_OFF" />
+            <xs:enumeration value="ALARM_ON" />
+            <xs:enumeration value="ALBUM" />
+            <xs:enumeration value="ALL_INCLUSIVE" />
+            <xs:enumeration value="ALL_OUT" />
+            <xs:enumeration value="ANDROID" />
+            <xs:enumeration value="ANNOUNCEMENT" />
+            <xs:enumeration value="APPS" />
+            <xs:enumeration value="ARCHIVE" />
+            <xs:enumeration value="ARROW_BACK" />
+            <xs:enumeration value="ARROW_DOWNWARD" />
+            <xs:enumeration value="ARROW_DROP_DOWN" />
+            <xs:enumeration value="ARROW_DROP_DOWN_CIRCLE" />
+            <xs:enumeration value="ARROW_DROP_UP" />
+            <xs:enumeration value="ARROW_FORWARD" />
+            <xs:enumeration value="ARROW_UPWARD" />
+            <xs:enumeration value="ART_TRACK" />
+            <xs:enumeration value="ASPECT_RATIO" />
+            <xs:enumeration value="ASSESSMENT" />
+            <xs:enumeration value="ASSIGNMENT" />
+            <xs:enumeration value="ASSIGNMENT_IND" />
+            <xs:enumeration value="ASSIGNMENT_LATE" />
+            <xs:enumeration value="ASSIGNMENT_RETURN" />
+            <xs:enumeration value="ASSIGNMENT_RETURNED" />
+            <xs:enumeration value="ASSIGNMENT_TURNED_IN" />
+            <xs:enumeration value="ASSISTANT" />
+            <xs:enumeration value="ASSISTANT_PHOTO" />
+            <xs:enumeration value="ATTACH_FILE" />
+            <xs:enumeration value="ATTACH_MONEY" />
+            <xs:enumeration value="ATTACHMENT" />
+            <xs:enumeration value="AUDIOTRACK" />
+            <xs:enumeration value="AUTORENEW" />
+            <xs:enumeration value="AV_TIMER" />
+            <xs:enumeration value="BACKSPACE" />
+            <xs:enumeration value="BACKUP" />
+            <xs:enumeration value="BATTERY_ALERT" />
+            <xs:enumeration value="BATTERY_CHARGING_FULL" />
+            <xs:enumeration value="BATTERY_FULL" />
+            <xs:enumeration value="BATTERY_STD" />
+            <xs:enumeration value="BATTERY_UNKNOWN" />
+            <xs:enumeration value="BEACH_ACCESS" />
+            <xs:enumeration value="BEENHERE" />
+            <xs:enumeration value="BLOCK" />
+            <xs:enumeration value="BLUETOOTH" />
+            <xs:enumeration value="BLUETOOTH_AUDIO" />
+            <xs:enumeration value="BLUETOOTH_CONNECTED" />
+            <xs:enumeration value="BLUETOOTH_DISABLED" />
+            <xs:enumeration value="BLUETOOTH_SEARCHING" />
+            <xs:enumeration value="BLUR_CIRCULAR" />
+            <xs:enumeration value="BLUR_LINEAR" />
+            <xs:enumeration value="BLUR_OFF" />
+            <xs:enumeration value="BLUR_ON" />
+            <xs:enumeration value="BOOK" />
+            <xs:enumeration value="BOOKMARK" />
+            <xs:enumeration value="BOOKMARK_BORDER" />
+            <xs:enumeration value="BORDER_ALL" />
+            <xs:enumeration value="BORDER_BOTTOM" />
+            <xs:enumeration value="BORDER_CLEAR" />
+            <xs:enumeration value="BORDER_COLOR" />
+            <xs:enumeration value="BORDER_HORIZONTAL" />
+            <xs:enumeration value="BORDER_INNER" />
+            <xs:enumeration value="BORDER_LEFT" />
+            <xs:enumeration value="BORDER_OUTER" />
+            <xs:enumeration value="BORDER_RIGHT" />
+            <xs:enumeration value="BORDER_STYLE" />
+            <xs:enumeration value="BORDER_TOP" />
+            <xs:enumeration value="BORDER_VERTICAL" />
+            <xs:enumeration value="BRANDING_WATERMARK" />
+            <xs:enumeration value="BRIGHTNESS_1" />
+            <xs:enumeration value="BRIGHTNESS_2" />
+            <xs:enumeration value="BRIGHTNESS_3" />
+            <xs:enumeration value="BRIGHTNESS_4" />
+            <xs:enumeration value="BRIGHTNESS_5" />
+            <xs:enumeration value="BRIGHTNESS_6" />
+            <xs:enumeration value="BRIGHTNESS_7" />
+            <xs:enumeration value="BRIGHTNESS_AUTO" />
+            <xs:enumeration value="BRIGHTNESS_HIGH" />
+            <xs:enumeration value="BRIGHTNESS_LOW" />
+            <xs:enumeration value="BRIGHTNESS_MEDIUM" />
+            <xs:enumeration value="BROKEN_IMAGE" />
+            <xs:enumeration value="BRUSH" />
+            <xs:enumeration value="BUBBLE_CHART" />
+            <xs:enumeration value="BUG_REPORT" />
+            <xs:enumeration value="BUILD" />
+            <xs:enumeration value="BURST_MODE" />
+            <xs:enumeration value="BUSINESS" />
+            <xs:enumeration value="BUSINESS_CENTER" />
+            <xs:enumeration value="CACHED" />
+            <xs:enumeration value="CAKE" />
+            <xs:enumeration value="CALL" />
+            <xs:enumeration value="CALL_END" />
+            <xs:enumeration value="CALL_MADE" />
+            <xs:enumeration value="CALL_MERGE" />
+            <xs:enumeration value="CALL_MISSED" />
+            <xs:enumeration value="CALL_MISSED_OUTGOING" />
+            <xs:enumeration value="CALL_RECEIVED" />
+            <xs:enumeration value="CALL_SPLIT" />
+            <xs:enumeration value="CALL_TO_ACTION" />
+            <xs:enumeration value="CAMERA" />
+            <xs:enumeration value="CAMERA_ALT" />
+            <xs:enumeration value="CAMERA_ENHANCE" />
+            <xs:enumeration value="CAMERA_FRONT" />
+            <xs:enumeration value="CAMERA_REAR" />
+            <xs:enumeration value="CAMERA_ROLL" />
+            <xs:enumeration value="CANCEL" />
+            <xs:enumeration value="CARD_GIFTCARD" />
+            <xs:enumeration value="CARD_MEMBERSHIP" />
+            <xs:enumeration value="CARD_TRAVEL" />
+            <xs:enumeration value="CASINO" />
+            <xs:enumeration value="CAST" />
+            <xs:enumeration value="CAST_CONNECTED" />
+            <xs:enumeration value="CENTER_FOCUS_STRONG" />
+            <xs:enumeration value="CENTER_FOCUS_WEAK" />
+            <xs:enumeration value="CHANGE_HISTORY" />
+            <xs:enumeration value="CHAT" />
+            <xs:enumeration value="CHAT_BUBBLE" />
+            <xs:enumeration value="CHAT_BUBBLE_OUTLINE" />
+            <xs:enumeration value="CHECK" />
+            <xs:enumeration value="CHECK_BOX" />
+            <xs:enumeration value="CHECK_BOX_OUTLINE_BLANK" />
+            <xs:enumeration value="CHECK_CIRCLE" />
+            <xs:enumeration value="CHEVRON_LEFT" />
+            <xs:enumeration value="CHEVRON_RIGHT" />
+            <xs:enumeration value="CHILD_CARE" />
+            <xs:enumeration value="CHILD_FRIENDLY" />
+            <xs:enumeration value="CHROME_READER_MODE" />
+            <xs:enumeration value="CLASS" />
+            <xs:enumeration value="CLEAR" />
+            <xs:enumeration value="CLEAR_ALL" />
+            <xs:enumeration value="CLOSE" />
+            <xs:enumeration value="CLOSED_CAPTION" />
+            <xs:enumeration value="CLOUD" />
+            <xs:enumeration value="CLOUD_CIRCLE" />
+            <xs:enumeration value="CLOUD_DONE" />
+            <xs:enumeration value="CLOUD_DOWNLOAD" />
+            <xs:enumeration value="CLOUD_OFF" />
+            <xs:enumeration value="CLOUD_QUEUE" />
+            <xs:enumeration value="CLOUD_UPLOAD" />
+            <xs:enumeration value="CODE" />
+            <xs:enumeration value="COLLECTIONS" />
+            <xs:enumeration value="COLLECTIONS_BOOKMARK" />
+            <xs:enumeration value="COLOR_LENS" />
+            <xs:enumeration value="COLORIZE" />
+            <xs:enumeration value="COMMENT" />
+            <xs:enumeration value="COMPARE" />
+            <xs:enumeration value="COMPARE_ARROWS" />
+            <xs:enumeration value="COMPUTER" />
+            <xs:enumeration value="CONFIRMATION_NUMBER" />
+            <xs:enumeration value="CONTACT_MAIL" />
+            <xs:enumeration value="CONTACT_PHONE" />
+            <xs:enumeration value="CONTACTS" />
+            <xs:enumeration value="CONTENT_COPY" />
+            <xs:enumeration value="CONTENT_CUT" />
+            <xs:enumeration value="CONTENT_PASTE" />
+            <xs:enumeration value="CONTROL_POINT" />
+            <xs:enumeration value="CONTROL_POINT_DUPLICATE" />
+            <xs:enumeration value="COPYRIGHT" />
+            <xs:enumeration value="CREATE" />
+            <xs:enumeration value="CREATE_NEW_FOLDER" />
+            <xs:enumeration value="CREDIT_CARD" />
+            <xs:enumeration value="CROP" />
+            <xs:enumeration value="CROP_16_9" />
+            <xs:enumeration value="CROP_3_2" />
+            <xs:enumeration value="CROP_5_4" />
+            <xs:enumeration value="CROP_7_5" />
+            <xs:enumeration value="CROP_DIN" />
+            <xs:enumeration value="CROP_FREE" />
+            <xs:enumeration value="CROP_LANDSCAPE" />
+            <xs:enumeration value="CROP_ORIGINAL" />
+            <xs:enumeration value="CROP_PORTRAIT" />
+            <xs:enumeration value="CROP_ROTATE" />
+            <xs:enumeration value="CROP_SQUARE" />
+            <xs:enumeration value="DASHBOARD" />
+            <xs:enumeration value="DATA_USAGE" />
+            <xs:enumeration value="DATE_RANGE" />
+            <xs:enumeration value="DEFAULT" />
+            <xs:enumeration value="DEHAZE" />
+            <xs:enumeration value="DELETE" />
+            <xs:enumeration value="DELETE_FOREVER" />
+            <xs:enumeration value="DELETE_SWEEP" />
+            <xs:enumeration value="DESCRIPTION" />
+            <xs:enumeration value="DESKTOP_MAC" />
+            <xs:enumeration value="DESKTOP_WINDOWS" />
+            <xs:enumeration value="DETAILS" />
+            <xs:enumeration value="DEVELOPER_BOARD" />
+            <xs:enumeration value="DEVELOPER_MODE" />
+            <xs:enumeration value="DEVICE_HUB" />
+            <xs:enumeration value="DEVICES" />
+            <xs:enumeration value="DEVICES_OTHER" />
+            <xs:enumeration value="DIALER_SIP" />
+            <xs:enumeration value="DIALPAD" />
+            <xs:enumeration value="DIRECTIONS" />
+            <xs:enumeration value="DIRECTIONS_BIKE" />
+            <xs:enumeration value="DIRECTIONS_BOAT" />
+            <xs:enumeration value="DIRECTIONS_BUS" />
+            <xs:enumeration value="DIRECTIONS_CAR" />
+            <xs:enumeration value="DIRECTIONS_RAILWAY" />
+            <xs:enumeration value="DIRECTIONS_RUN" />
+            <xs:enumeration value="DIRECTIONS_SUBWAY" />
+            <xs:enumeration value="DIRECTIONS_TRANSIT" />
+            <xs:enumeration value="DIRECTIONS_WALK" />
+            <xs:enumeration value="DISC_FULL" />
+            <xs:enumeration value="DNS" />
+            <xs:enumeration value="DO_NOT_DISTURB" />
+            <xs:enumeration value="DO_NOT_DISTURB_ALT" />
+            <xs:enumeration value="DO_NOT_DISTURB_OFF" />
+            <xs:enumeration value="DO_NOT_DISTURB_ON" />
+            <xs:enumeration value="DOCK" />
+            <xs:enumeration value="DOMAIN" />
+            <xs:enumeration value="DONE" />
+            <xs:enumeration value="DONE_ALL" />
+            <xs:enumeration value="DONUT_LARGE" />
+            <xs:enumeration value="DONUT_SMALL" />
+            <xs:enumeration value="DRAFTS" />
+            <xs:enumeration value="DRAG_HANDLE" />
+            <xs:enumeration value="DRIVE_ETA" />
+            <xs:enumeration value="DVR" />
+            <xs:enumeration value="EDIT" />
+            <xs:enumeration value="EDIT_LOCATION" />
+            <xs:enumeration value="EJECT" />
+            <xs:enumeration value="EMAIL" />
+            <xs:enumeration value="ENHANCED_ENCRYPTION" />
+            <xs:enumeration value="EQUALIZER" />
+            <xs:enumeration value="ERROR" />
+            <xs:enumeration value="ERROR_OUTLINE" />
+            <xs:enumeration value="EURO_SYMBOL" />
+            <xs:enumeration value="EV_STATION" />
+            <xs:enumeration value="EVENT" />
+            <xs:enumeration value="EVENT_AVAILABLE" />
+            <xs:enumeration value="EVENT_BUSY" />
+            <xs:enumeration value="EVENT_NOTE" />
+            <xs:enumeration value="EVENT_SEAT" />
+            <xs:enumeration value="EXIT_TO_APP" />
+            <xs:enumeration value="EXPAND_LESS" />
+            <xs:enumeration value="EXPAND_MORE" />
+            <xs:enumeration value="EXPLICIT" />
+            <xs:enumeration value="EXPLORE" />
+            <xs:enumeration value="EXPOSURE" />
+            <xs:enumeration value="EXPOSURE_NEG_1" />
+            <xs:enumeration value="EXPOSURE_NEG_2" />
+            <xs:enumeration value="EXPOSURE_PLUS_1" />
+            <xs:enumeration value="EXPOSURE_PLUS_2" />
+            <xs:enumeration value="EXPOSURE_ZERO" />
+            <xs:enumeration value="EXTENSION" />
+            <xs:enumeration value="FACE" />
+            <xs:enumeration value="FAST_FORWARD" />
+            <xs:enumeration value="FAST_REWIND" />
+            <xs:enumeration value="FAVORITE" />
+            <xs:enumeration value="FAVORITE_BORDER" />
+            <xs:enumeration value="FEATURED_PLAY_LIST" />
+            <xs:enumeration value="FEATURED_VIDEO" />
+            <xs:enumeration value="FEEDBACK" />
+            <xs:enumeration value="FIBER_DVR" />
+            <xs:enumeration value="FIBER_MANUAL_RECORD" />
+            <xs:enumeration value="FIBER_NEW" />
+            <xs:enumeration value="FIBER_PIN" />
+            <xs:enumeration value="FIBER_SMART_RECORD" />
+            <xs:enumeration value="FILE_DOWNLOAD" />
+            <xs:enumeration value="FILE_UPLOAD" />
+            <xs:enumeration value="FILTER" />
+            <xs:enumeration value="FILTER_1" />
+            <xs:enumeration value="FILTER_2" />
+            <xs:enumeration value="FILTER_3" />
+            <xs:enumeration value="FILTER_4" />
+            <xs:enumeration value="FILTER_5" />
+            <xs:enumeration value="FILTER_6" />
+            <xs:enumeration value="FILTER_7" />
+            <xs:enumeration value="FILTER_8" />
+            <xs:enumeration value="FILTER_9" />
+            <xs:enumeration value="FILTER_9_PLUS" />
+            <xs:enumeration value="FILTER_B_AND_W" />
+            <xs:enumeration value="FILTER_CENTER_FOCUS" />
+            <xs:enumeration value="FILTER_DRAMA" />
+            <xs:enumeration value="FILTER_FRAMES" />
+            <xs:enumeration value="FILTER_HDR" />
+            <xs:enumeration value="FILTER_LIST" />
+            <xs:enumeration value="FILTER_NONE" />
+            <xs:enumeration value="FILTER_TILT_SHIFT" />
+            <xs:enumeration value="FILTER_VINTAGE" />
+            <xs:enumeration value="FIND_IN_PAGE" />
+            <xs:enumeration value="FIND_REPLACE" />
+            <xs:enumeration value="FINGERPRINT" />
+            <xs:enumeration value="FIRST_PAGE" />
+            <xs:enumeration value="FITNESS_CENTER" />
+            <xs:enumeration value="FLAG" />
+            <xs:enumeration value="FLARE" />
+            <xs:enumeration value="FLASH_AUTO" />
+            <xs:enumeration value="FLASH_OFF" />
+            <xs:enumeration value="FLASH_ON" />
+            <xs:enumeration value="FLIGHT" />
+            <xs:enumeration value="FLIGHT_LAND" />
+            <xs:enumeration value="FLIGHT_TAKEOFF" />
+            <xs:enumeration value="FLIP" />
+            <xs:enumeration value="FLIP_TO_BACK" />
+            <xs:enumeration value="FLIP_TO_FRONT" />
+            <xs:enumeration value="FOLDER" />
+            <xs:enumeration value="FOLDER_OPEN" />
+            <xs:enumeration value="FOLDER_SHARED" />
+            <xs:enumeration value="FOLDER_SPECIAL" />
+            <xs:enumeration value="FONT_DOWNLOAD" />
+            <xs:enumeration value="FORMAT_ALIGN_CENTER" />
+            <xs:enumeration value="FORMAT_ALIGN_JUSTIFY" />
+            <xs:enumeration value="FORMAT_ALIGN_LEFT" />
+            <xs:enumeration value="FORMAT_ALIGN_RIGHT" />
+            <xs:enumeration value="FORMAT_BOLD" />
+            <xs:enumeration value="FORMAT_CLEAR" />
+            <xs:enumeration value="FORMAT_COLOR_FILL" />
+            <xs:enumeration value="FORMAT_COLOR_RESET" />
+            <xs:enumeration value="FORMAT_COLOR_TEXT" />
+            <xs:enumeration value="FORMAT_INDENT_DECREASE" />
+            <xs:enumeration value="FORMAT_INDENT_INCREASE" />
+            <xs:enumeration value="FORMAT_ITALIC" />
+            <xs:enumeration value="FORMAT_LINE_SPACING" />
+            <xs:enumeration value="FORMAT_LIST_BULLETED" />
+            <xs:enumeration value="FORMAT_LIST_NUMBERED" />
+            <xs:enumeration value="FORMAT_PAINT" />
+            <xs:enumeration value="FORMAT_QUOTE" />
+            <xs:enumeration value="FORMAT_SHAPES" />
+            <xs:enumeration value="FORMAT_SIZE" />
+            <xs:enumeration value="FORMAT_STRIKETHROUGH" />
+            <xs:enumeration value="FORMAT_TEXTDIRECTION_L_TO_R" />
+            <xs:enumeration value="FORMAT_TEXTDIRECTION_R_TO_L" />
+            <xs:enumeration value="FORMAT_UNDERLINED" />
+            <xs:enumeration value="FORUM" />
+            <xs:enumeration value="FORWARD" />
+            <xs:enumeration value="FORWARD_10" />
+            <xs:enumeration value="FORWARD_30" />
+            <xs:enumeration value="FORWARD_5" />
+            <xs:enumeration value="FREE_BREAKFAST" />
+            <xs:enumeration value="FULLSCREEN" />
+            <xs:enumeration value="FULLSCREEN_EXIT" />
+            <xs:enumeration value="FUNCTIONS" />
+            <xs:enumeration value="G_TRANSLATE" />
+            <xs:enumeration value="GAMEPAD" />
+            <xs:enumeration value="GAMES" />
+            <xs:enumeration value="GAVEL" />
+            <xs:enumeration value="GESTURE" />
+            <xs:enumeration value="GET_APP" />
+            <xs:enumeration value="GIF" />
+            <xs:enumeration value="GOLF_COURSE" />
+            <xs:enumeration value="GPS_FIXED" />
+            <xs:enumeration value="GPS_NOT_FIXED" />
+            <xs:enumeration value="GPS_OFF" />
+            <xs:enumeration value="GRADE" />
+            <xs:enumeration value="GRADIENT" />
+            <xs:enumeration value="GRAIN" />
+            <xs:enumeration value="GRAPHIC_EQ" />
+            <xs:enumeration value="GRID_OFF" />
+            <xs:enumeration value="GRID_ON" />
+            <xs:enumeration value="GROUP" />
+            <xs:enumeration value="GROUP_ADD" />
+            <xs:enumeration value="GROUP_WORK" />
+            <xs:enumeration value="HD" />
+            <xs:enumeration value="HDR_OFF" />
+            <xs:enumeration value="HDR_ON" />
+            <xs:enumeration value="HDR_STRONG" />
+            <xs:enumeration value="HDR_WEAK" />
+            <xs:enumeration value="HEADSET" />
+            <xs:enumeration value="HEADSET_MIC" />
+            <xs:enumeration value="HEALING" />
+            <xs:enumeration value="HEARING" />
+            <xs:enumeration value="HELP" />
+            <xs:enumeration value="HELP_OUTLINE" />
+            <xs:enumeration value="HIGH_QUALITY" />
+            <xs:enumeration value="HIGHLIGHT" />
+            <xs:enumeration value="HIGHLIGHT_OFF" />
+            <xs:enumeration value="HISTORY" />
+            <xs:enumeration value="HOME" />
+            <xs:enumeration value="HOT_TUB" />
+            <xs:enumeration value="HOTEL" />
+            <xs:enumeration value="HOURGLASS_EMPTY" />
+            <xs:enumeration value="HOURGLASS_FULL" />
+            <xs:enumeration value="HTTP" />
+            <xs:enumeration value="HTTPS" />
+            <xs:enumeration value="IMAGE" />
+            <xs:enumeration value="IMAGE_ASPECT_RATIO" />
+            <xs:enumeration value="IMPORT_CONTACTS" />
+            <xs:enumeration value="IMPORT_EXPORT" />
+            <xs:enumeration value="IMPORTANT_DEVICES" />
+            <xs:enumeration value="INBOX" />
+            <xs:enumeration value="INDETERMINATE_CHECK_BOX" />
+            <xs:enumeration value="INFO" />
+            <xs:enumeration value="INFO_OUTLINE" />
+            <xs:enumeration value="INPUT" />
+            <xs:enumeration value="INSERT_CHART" />
+            <xs:enumeration value="INSERT_COMMENT" />
+            <xs:enumeration value="INSERT_DRIVE_FILE" />
+            <xs:enumeration value="INSERT_EMOTICON" />
+            <xs:enumeration value="INSERT_INVITATION" />
+            <xs:enumeration value="INSERT_LINK" />
+            <xs:enumeration value="INSERT_PHOTO" />
+            <xs:enumeration value="INVERT_COLORS" />
+            <xs:enumeration value="INVERT_COLORS_OFF" />
+            <xs:enumeration value="ISO" />
+            <xs:enumeration value="KEYBOARD" />
+            <xs:enumeration value="KEYBOARD_ARROW_DOWN" />
+            <xs:enumeration value="KEYBOARD_ARROW_LEFT" />
+            <xs:enumeration value="KEYBOARD_ARROW_RIGHT" />
+            <xs:enumeration value="KEYBOARD_ARROW_UP" />
+            <xs:enumeration value="KEYBOARD_BACKSPACE" />
+            <xs:enumeration value="KEYBOARD_CAPSLOCK" />
+            <xs:enumeration value="KEYBOARD_HIDE" />
+            <xs:enumeration value="KEYBOARD_RETURN" />
+            <xs:enumeration value="KEYBOARD_TAB" />
+            <xs:enumeration value="KEYBOARD_VOICE" />
+            <xs:enumeration value="KITCHEN" />
+            <xs:enumeration value="LABEL" />
+            <xs:enumeration value="LABEL_OUTLINE" />
+            <xs:enumeration value="LANDSCAPE" />
+            <xs:enumeration value="LANGUAGE" />
+            <xs:enumeration value="LAPTOP" />
+            <xs:enumeration value="LAPTOP_CHROMEBOOK" />
+            <xs:enumeration value="LAPTOP_MAC" />
+            <xs:enumeration value="LAPTOP_WINDOWS" />
+            <xs:enumeration value="LAST_PAGE" />
+            <xs:enumeration value="LAUNCH" />
+            <xs:enumeration value="LAYERS" />
+            <xs:enumeration value="LAYERS_CLEAR" />
+            <xs:enumeration value="LEAK_ADD" />
+            <xs:enumeration value="LEAK_REMOVE" />
+            <xs:enumeration value="LENS" />
+            <xs:enumeration value="LIBRARY_ADD" />
+            <xs:enumeration value="LIBRARY_BOOKS" />
+            <xs:enumeration value="LIBRARY_MUSIC" />
+            <xs:enumeration value="LIGHTBULB_OUTLINE" />
+            <xs:enumeration value="LINE_STYLE" />
+            <xs:enumeration value="LINE_WEIGHT" />
+            <xs:enumeration value="LINEAR_SCALE" />
+            <xs:enumeration value="LINK" />
+            <xs:enumeration value="LINKED_CAMERA" />
+            <xs:enumeration value="LIST" />
+            <xs:enumeration value="LIVE_HELP" />
+            <xs:enumeration value="LIVE_TV" />
+            <xs:enumeration value="LOCAL_ACTIVITY" />
+            <xs:enumeration value="LOCAL_AIRPORT" />
+            <xs:enumeration value="LOCAL_ATM" />
+            <xs:enumeration value="LOCAL_BAR" />
+            <xs:enumeration value="LOCAL_CAFE" />
+            <xs:enumeration value="LOCAL_CAR_WASH" />
+            <xs:enumeration value="LOCAL_CONVENIENCE_STORE" />
+            <xs:enumeration value="LOCAL_DINING" />
+            <xs:enumeration value="LOCAL_DRINK" />
+            <xs:enumeration value="LOCAL_FLORIST" />
+            <xs:enumeration value="LOCAL_GAS_STATION" />
+            <xs:enumeration value="LOCAL_GROCERY_STORE" />
+            <xs:enumeration value="LOCAL_HOSPITAL" />
+            <xs:enumeration value="LOCAL_HOTEL" />
+            <xs:enumeration value="LOCAL_LAUNDRY_SERVICE" />
+            <xs:enumeration value="LOCAL_LIBRARY" />
+            <xs:enumeration value="LOCAL_MALL" />
+            <xs:enumeration value="LOCAL_MOVIES" />
+            <xs:enumeration value="LOCAL_OFFER" />
+            <xs:enumeration value="LOCAL_PARKING" />
+            <xs:enumeration value="LOCAL_PHARMACY" />
+            <xs:enumeration value="LOCAL_PHONE" />
+            <xs:enumeration value="LOCAL_PIZZA" />
+            <xs:enumeration value="LOCAL_PLAY" />
+            <xs:enumeration value="LOCAL_POST_OFFICE" />
+            <xs:enumeration value="LOCAL_PRINTSHOP" />
+            <xs:enumeration value="LOCAL_SEE" />
+            <xs:enumeration value="LOCAL_SHIPPING" />
+            <xs:enumeration value="LOCAL_TAXI" />
+            <xs:enumeration value="LOCATION_CITY" />
+            <xs:enumeration value="LOCATION_DISABLED" />
+            <xs:enumeration value="LOCATION_OFF" />
+            <xs:enumeration value="LOCATION_ON" />
+            <xs:enumeration value="LOCATION_SEARCHING" />
+            <xs:enumeration value="LOCK" />
+            <xs:enumeration value="LOCK_OPEN" />
+            <xs:enumeration value="LOCK_OUTLINE" />
+            <xs:enumeration value="LOOKS" />
+            <xs:enumeration value="LOOKS_3" />
+            <xs:enumeration value="LOOKS_4" />
+            <xs:enumeration value="LOOKS_5" />
+            <xs:enumeration value="LOOKS_6" />
+            <xs:enumeration value="LOOKS_ONE" />
+            <xs:enumeration value="LOOKS_TWO" />
+            <xs:enumeration value="LOOP" />
+            <xs:enumeration value="LOUPE" />
+            <xs:enumeration value="LOW_PRIORITY" />
+            <xs:enumeration value="LOYALTY" />
+            <xs:enumeration value="MAIL" />
+            <xs:enumeration value="MAIL_OUTLINE" />
+            <xs:enumeration value="MAP" />
+            <xs:enumeration value="MARKUNREAD" />
+            <xs:enumeration value="MARKUNREAD_MAILBOX" />
+            <xs:enumeration value="MEMORY" />
+            <xs:enumeration value="MENU" />
+            <xs:enumeration value="MERGE_TYPE" />
+            <xs:enumeration value="MESSAGE" />
+            <xs:enumeration value="MIC" />
+            <xs:enumeration value="MIC_NONE" />
+            <xs:enumeration value="MIC_OFF" />
+            <xs:enumeration value="MMS" />
+            <xs:enumeration value="MODE_COMMENT" />
+            <xs:enumeration value="MODE_EDIT" />
+            <xs:enumeration value="MONETIZATION_ON" />
+            <xs:enumeration value="MONEY_OFF" />
+            <xs:enumeration value="MONOCHROME_PHOTOS" />
+            <xs:enumeration value="MOOD" />
+            <xs:enumeration value="MOOD_BAD" />
+            <xs:enumeration value="MORE" />
+            <xs:enumeration value="MORE_HORIZ" />
+            <xs:enumeration value="MORE_VERT" />
+            <xs:enumeration value="MOTORCYCLE" />
+            <xs:enumeration value="MOUSE" />
+            <xs:enumeration value="MOVE_TO_INBOX" />
+            <xs:enumeration value="MOVIE" />
+            <xs:enumeration value="MOVIE_CREATION" />
+            <xs:enumeration value="MOVIE_FILTER" />
+            <xs:enumeration value="MULTILINE_CHART" />
+            <xs:enumeration value="MUSIC_NOTE" />
+            <xs:enumeration value="MUSIC_VIDEO" />
+            <xs:enumeration value="MY_LOCATION" />
+            <xs:enumeration value="NATURE" />
+            <xs:enumeration value="NATURE_PEOPLE" />
+            <xs:enumeration value="NAVIGATE_BEFORE" />
+            <xs:enumeration value="NAVIGATE_NEXT" />
+            <xs:enumeration value="NAVIGATION" />
+            <xs:enumeration value="NEAR_ME" />
+            <xs:enumeration value="NETWORK_CELL" />
+            <xs:enumeration value="NETWORK_CHECK" />
+            <xs:enumeration value="NETWORK_LOCKED" />
+            <xs:enumeration value="NETWORK_WIFI" />
+            <xs:enumeration value="NEW_RELEASES" />
+            <xs:enumeration value="NEXT_WEEK" />
+            <xs:enumeration value="NFC" />
+            <xs:enumeration value="NO_ENCRYPTION" />
+            <xs:enumeration value="NO_SIM" />
+            <xs:enumeration value="NOT_INTERESTED" />
+            <xs:enumeration value="NOTE" />
+            <xs:enumeration value="NOTE_ADD" />
+            <xs:enumeration value="NOTIFICATIONS" />
+            <xs:enumeration value="NOTIFICATIONS_ACTIVE" />
+            <xs:enumeration value="NOTIFICATIONS_NONE" />
+            <xs:enumeration value="NOTIFICATIONS_OFF" />
+            <xs:enumeration value="NOTIFICATIONS_PAUSED" />
+            <xs:enumeration value="OFFLINE_PIN" />
+            <xs:enumeration value="ONDEMAND_VIDEO" />
+            <xs:enumeration value="OPACITY" />
+            <xs:enumeration value="OPEN_IN_BROWSER" />
+            <xs:enumeration value="OPEN_IN_NEW" />
+            <xs:enumeration value="OPEN_WITH" />
+            <xs:enumeration value="PAGES" />
+            <xs:enumeration value="PAGEVIEW" />
+            <xs:enumeration value="PALETTE" />
+            <xs:enumeration value="PAN_TOOL" />
+            <xs:enumeration value="PANORAMA" />
+            <xs:enumeration value="PANORAMA_FISH_EYE" />
+            <xs:enumeration value="PANORAMA_HORIZONTAL" />
+            <xs:enumeration value="PANORAMA_VERTICAL" />
+            <xs:enumeration value="PANORAMA_WIDE_ANGLE" />
+            <xs:enumeration value="PARTY_MODE" />
+            <xs:enumeration value="PAUSE" />
+            <xs:enumeration value="PAUSE_CIRCLE_FILLED" />
+            <xs:enumeration value="PAUSE_CIRCLE_OUTLINE" />
+            <xs:enumeration value="PAYMENT" />
+            <xs:enumeration value="PEOPLE" />
+            <xs:enumeration value="PEOPLE_OUTLINE" />
+            <xs:enumeration value="PERM_CAMERA_MIC" />
+            <xs:enumeration value="PERM_CONTACT_CALENDAR" />
+            <xs:enumeration value="PERM_DATA_SETTING" />
+            <xs:enumeration value="PERM_DEVICE_INFORMATION" />
+            <xs:enumeration value="PERM_IDENTITY" />
+            <xs:enumeration value="PERM_MEDIA" />
+            <xs:enumeration value="PERM_PHONE_MSG" />
+            <xs:enumeration value="PERM_SCAN_WIFI" />
+            <xs:enumeration value="PERSON" />
+            <xs:enumeration value="PERSON_ADD" />
+            <xs:enumeration value="PERSON_OUTLINE" />
+            <xs:enumeration value="PERSON_PIN" />
+            <xs:enumeration value="PERSON_PIN_CIRCLE" />
+            <xs:enumeration value="PERSONAL_VIDEO" />
+            <xs:enumeration value="PETS" />
+            <xs:enumeration value="PHONE" />
+            <xs:enumeration value="PHONE_ANDROID" />
+            <xs:enumeration value="PHONE_BLUETOOTH_SPEAKER" />
+            <xs:enumeration value="PHONE_FORWARDED" />
+            <xs:enumeration value="PHONE_IN_TALK" />
+            <xs:enumeration value="PHONE_IPHONE" />
+            <xs:enumeration value="PHONE_LOCKED" />
+            <xs:enumeration value="PHONE_MISSED" />
+            <xs:enumeration value="PHONE_PAUSED" />
+            <xs:enumeration value="PHONELINK" />
+            <xs:enumeration value="PHONELINK_ERASE" />
+            <xs:enumeration value="PHONELINK_LOCK" />
+            <xs:enumeration value="PHONELINK_OFF" />
+            <xs:enumeration value="PHONELINK_RING" />
+            <xs:enumeration value="PHONELINK_SETUP" />
+            <xs:enumeration value="PHOTO" />
+            <xs:enumeration value="PHOTO_ALBUM" />
+            <xs:enumeration value="PHOTO_CAMERA" />
+            <xs:enumeration value="PHOTO_FILTER" />
+            <xs:enumeration value="PHOTO_LIBRARY" />
+            <xs:enumeration value="PHOTO_SIZE_SELECT_ACTUAL" />
+            <xs:enumeration value="PHOTO_SIZE_SELECT_LARGE" />
+            <xs:enumeration value="PHOTO_SIZE_SELECT_SMALL" />
+            <xs:enumeration value="PICTURE_AS_PDF" />
+            <xs:enumeration value="PICTURE_IN_PICTURE" />
+            <xs:enumeration value="PICTURE_IN_PICTURE_ALT" />
+            <xs:enumeration value="PIE_CHART" />
+            <xs:enumeration value="PIE_CHART_OUTLINED" />
+            <xs:enumeration value="PIN_DROP" />
+            <xs:enumeration value="PLACE" />
+            <xs:enumeration value="PLAY_ARROW" />
+            <xs:enumeration value="PLAY_CIRCLE_FILLED" />
+            <xs:enumeration value="PLAY_CIRCLE_OUTLINE" />
+            <xs:enumeration value="PLAY_FOR_WORK" />
+            <xs:enumeration value="PLAYLIST_ADD" />
+            <xs:enumeration value="PLAYLIST_ADD_CHECK" />
+            <xs:enumeration value="PLAYLIST_PLAY" />
+            <xs:enumeration value="PLUS_ONE" />
+            <xs:enumeration value="POLL" />
+            <xs:enumeration value="POLYMER" />
+            <xs:enumeration value="POOL" />
+            <xs:enumeration value="PORTABLE_WIFI_OFF" />
+            <xs:enumeration value="PORTRAIT" />
+            <xs:enumeration value="POWER" />
+            <xs:enumeration value="POWER_INPUT" />
+            <xs:enumeration value="POWER_SETTINGS_NEW" />
+            <xs:enumeration value="PREGNANT_WOMAN" />
+            <xs:enumeration value="PRESENT_TO_ALL" />
+            <xs:enumeration value="PRINT" />
+            <xs:enumeration value="PRIORITY_HIGH" />
+            <xs:enumeration value="PUBLIC" />
+            <xs:enumeration value="PUBLISH" />
+            <xs:enumeration value="QUERY_BUILDER" />
+            <xs:enumeration value="QUESTION_ANSWER" />
+            <xs:enumeration value="QUEUE" />
+            <xs:enumeration value="QUEUE_MUSIC" />
+            <xs:enumeration value="QUEUE_PLAY_NEXT" />
+            <xs:enumeration value="RADIO" />
+            <xs:enumeration value="RADIO_BUTTON_CHECKED" />
+            <xs:enumeration value="RADIO_BUTTON_UNCHECKED" />
+            <xs:enumeration value="RATE_REVIEW" />
+            <xs:enumeration value="RECEIPT" />
+            <xs:enumeration value="RECENT_ACTORS" />
+            <xs:enumeration value="RECORD_VOICE_OVER" />
+            <xs:enumeration value="REDEEM" />
+            <xs:enumeration value="REDO" />
+            <xs:enumeration value="REFRESH" />
+            <xs:enumeration value="REMOVE" />
+            <xs:enumeration value="REMOVE_CIRCLE" />
+            <xs:enumeration value="REMOVE_CIRCLE_OUTLINE" />
+            <xs:enumeration value="REMOVE_FROM_QUEUE" />
+            <xs:enumeration value="REMOVE_RED_EYE" />
+            <xs:enumeration value="REMOVE_SHOPPING_CART" />
+            <xs:enumeration value="REORDER" />
+            <xs:enumeration value="REPEAT" />
+            <xs:enumeration value="REPEAT_ONE" />
+            <xs:enumeration value="REPLAY" />
+            <xs:enumeration value="REPLAY_10" />
+            <xs:enumeration value="REPLAY_30" />
+            <xs:enumeration value="REPLAY_5" />
+            <xs:enumeration value="REPLY" />
+            <xs:enumeration value="REPLY_ALL" />
+            <xs:enumeration value="REPORT" />
+            <xs:enumeration value="REPORT_PROBLEM" />
+            <xs:enumeration value="RESTAURANT" />
+            <xs:enumeration value="RESTAURANT_MENU" />
+            <xs:enumeration value="RESTORE" />
+            <xs:enumeration value="RESTORE_PAGE" />
+            <xs:enumeration value="RING_VOLUME" />
+            <xs:enumeration value="ROOM" />
+            <xs:enumeration value="ROOM_SERVICE" />
+            <xs:enumeration value="ROTATE_90_DEGREES_CCW" />
+            <xs:enumeration value="ROTATE_LEFT" />
+            <xs:enumeration value="ROTATE_RIGHT" />
+            <xs:enumeration value="ROTATION_3D" />
+            <xs:enumeration value="ROUNDED_CORNER" />
+            <xs:enumeration value="ROUTER" />
+            <xs:enumeration value="ROWING" />
+            <xs:enumeration value="RSS_FEED" />
+            <xs:enumeration value="RV_HOOKUP" />
+            <xs:enumeration value="SATELLITE" />
+            <xs:enumeration value="SAVE" />
+            <xs:enumeration value="SCANNER" />
+            <xs:enumeration value="SCHEDULE" />
+            <xs:enumeration value="SCHOOL" />
+            <xs:enumeration value="SCREEN_LOCK_LANDSCAPE" />
+            <xs:enumeration value="SCREEN_LOCK_PORTRAIT" />
+            <xs:enumeration value="SCREEN_LOCK_ROTATION" />
+            <xs:enumeration value="SCREEN_ROTATION" />
+            <xs:enumeration value="SCREEN_SHARE" />
+            <xs:enumeration value="SD_CARD" />
+            <xs:enumeration value="SD_STORAGE" />
+            <xs:enumeration value="SEARCH" />
+            <xs:enumeration value="SECURITY" />
+            <xs:enumeration value="SELECT_ALL" />
+            <xs:enumeration value="SEND" />
+            <xs:enumeration value="SENTIMENT_DISSATISFIED" />
+            <xs:enumeration value="SENTIMENT_NEUTRAL" />
+            <xs:enumeration value="SENTIMENT_SATISFIED" />
+            <xs:enumeration value="SENTIMENT_VERY_DISSATISFIED" />
+            <xs:enumeration value="SENTIMENT_VERY_SATISFIED" />
+            <xs:enumeration value="SETTINGS" />
+            <xs:enumeration value="SETTINGS_APPLICATIONS" />
+            <xs:enumeration value="SETTINGS_BACKUP_RESTORE" />
+            <xs:enumeration value="SETTINGS_BLUETOOTH" />
+            <xs:enumeration value="SETTINGS_BRIGHTNESS" />
+            <xs:enumeration value="SETTINGS_CELL" />
+            <xs:enumeration value="SETTINGS_ETHERNET" />
+            <xs:enumeration value="SETTINGS_INPUT_ANTENNA" />
+            <xs:enumeration value="SETTINGS_INPUT_COMPONENT" />
+            <xs:enumeration value="SETTINGS_INPUT_COMPOSITE" />
+            <xs:enumeration value="SETTINGS_INPUT_HDMI" />
+            <xs:enumeration value="SETTINGS_INPUT_SVIDEO" />
+            <xs:enumeration value="SETTINGS_OVERSCAN" />
+            <xs:enumeration value="SETTINGS_PHONE" />
+            <xs:enumeration value="SETTINGS_POWER" />
+            <xs:enumeration value="SETTINGS_REMOTE" />
+            <xs:enumeration value="SETTINGS_SYSTEM_DAYDREAM" />
+            <xs:enumeration value="SETTINGS_VOICE" />
+            <xs:enumeration value="SHARE" />
+            <xs:enumeration value="SHOP" />
+            <xs:enumeration value="SHOP_TWO" />
+            <xs:enumeration value="SHOPPING_BASKET" />
+            <xs:enumeration value="SHOPPING_CART" />
+            <xs:enumeration value="SHORT_TEXT" />
+            <xs:enumeration value="SHOW_CHART" />
+            <xs:enumeration value="SHUFFLE" />
+            <xs:enumeration value="SIGNAL_CELLULAR_4_BAR" />
+            <xs:enumeration value="SIGNAL_CELLULAR_CONNECTED_NO_INTERNET_4_BAR" />
+            <xs:enumeration value="SIGNAL_CELLULAR_NO_SIM" />
+            <xs:enumeration value="SIGNAL_CELLULAR_NULL" />
+            <xs:enumeration value="SIGNAL_CELLULAR_OFF" />
+            <xs:enumeration value="SIGNAL_WIFI_4_BAR" />
+            <xs:enumeration value="SIGNAL_WIFI_4_BAR_LOCK" />
+            <xs:enumeration value="SIGNAL_WIFI_OFF" />
+            <xs:enumeration value="SIM_CARD" />
+            <xs:enumeration value="SIM_CARD_ALERT" />
+            <xs:enumeration value="SKIP_NEXT" />
+            <xs:enumeration value="SKIP_PREVIOUS" />
+            <xs:enumeration value="SLIDESHOW" />
+            <xs:enumeration value="SLOW_MOTION_VIDEO" />
+            <xs:enumeration value="SMARTPHONE" />
+            <xs:enumeration value="SMOKE_FREE" />
+            <xs:enumeration value="SMOKING_ROOMS" />
+            <xs:enumeration value="SMS" />
+            <xs:enumeration value="SMS_FAILED" />
+            <xs:enumeration value="SNOOZE" />
+            <xs:enumeration value="SORT" />
+            <xs:enumeration value="SORT_BY_ALPHA" />
+            <xs:enumeration value="SPA" />
+            <xs:enumeration value="SPACE_BAR" />
+            <xs:enumeration value="SPEAKER" />
+            <xs:enumeration value="SPEAKER_GROUP" />
+            <xs:enumeration value="SPEAKER_NOTES" />
+            <xs:enumeration value="SPEAKER_NOTES_OFF" />
+            <xs:enumeration value="SPEAKER_PHONE" />
+            <xs:enumeration value="SPELLCHECK" />
+            <xs:enumeration value="STAR" />
+            <xs:enumeration value="STAR_BORDER" />
+            <xs:enumeration value="STAR_HALF" />
+            <xs:enumeration value="STARS" />
+            <xs:enumeration value="STAY_CURRENT_LANDSCAPE" />
+            <xs:enumeration value="STAY_CURRENT_PORTRAIT" />
+            <xs:enumeration value="STAY_PRIMARY_LANDSCAPE" />
+            <xs:enumeration value="STAY_PRIMARY_PORTRAIT" />
+            <xs:enumeration value="STOP" />
+            <xs:enumeration value="STOP_SCREEN_SHARE" />
+            <xs:enumeration value="STORAGE" />
+            <xs:enumeration value="STORE" />
+            <xs:enumeration value="STORE_MALL_DIRECTORY" />
+            <xs:enumeration value="STRAIGHTEN" />
+            <xs:enumeration value="STREETVIEW" />
+            <xs:enumeration value="STRIKETHROUGH_S" />
+            <xs:enumeration value="STYLE" />
+            <xs:enumeration value="SUBDIRECTORY_ARROW_LEFT" />
+            <xs:enumeration value="SUBDIRECTORY_ARROW_RIGHT" />
+            <xs:enumeration value="SUBJECT" />
+            <xs:enumeration value="SUBSCRIPTIONS" />
+            <xs:enumeration value="SUBTITLES" />
+            <xs:enumeration value="SUBWAY" />
+            <xs:enumeration value="SUPERVISOR_ACCOUNT" />
+            <xs:enumeration value="SURROUND_SOUND" />
+            <xs:enumeration value="SWAP_CALLS" />
+            <xs:enumeration value="SWAP_HORIZ" />
+            <xs:enumeration value="SWAP_VERT" />
+            <xs:enumeration value="SWAP_VERTICAL_CIRCLE" />
+            <xs:enumeration value="SWITCH_CAMERA" />
+            <xs:enumeration value="SWITCH_VIDEO" />
+            <xs:enumeration value="SYNC" />
+            <xs:enumeration value="SYNC_DISABLED" />
+            <xs:enumeration value="SYNC_PROBLEM" />
+            <xs:enumeration value="SYSTEM_UPDATE" />
+            <xs:enumeration value="SYSTEM_UPDATE_ALT" />
+            <xs:enumeration value="TAB" />
+            <xs:enumeration value="TAB_UNSELECTED" />
+            <xs:enumeration value="TABLET" />
+            <xs:enumeration value="TABLET_ANDROID" />
+            <xs:enumeration value="TABLET_MAC" />
+            <xs:enumeration value="TAG_FACES" />
+            <xs:enumeration value="TAP_AND_PLAY" />
+            <xs:enumeration value="TERRAIN" />
+            <xs:enumeration value="TEXT_FIELDS" />
+            <xs:enumeration value="TEXT_FORMAT" />
+            <xs:enumeration value="TEXTSMS" />
+            <xs:enumeration value="TEXTURE" />
+            <xs:enumeration value="THEATERS" />
+            <xs:enumeration value="THUMB_DOWN" />
+            <xs:enumeration value="THUMB_UP" />
+            <xs:enumeration value="THUMBS_UP_DOWN" />
+            <xs:enumeration value="TIME_TO_LEAVE" />
+            <xs:enumeration value="TIMELAPSE" />
+            <xs:enumeration value="TIMELINE" />
+            <xs:enumeration value="TIMER" />
+            <xs:enumeration value="TIMER_10" />
+            <xs:enumeration value="TIMER_3" />
+            <xs:enumeration value="TIMER_OFF" />
+            <xs:enumeration value="TITLE" />
+            <xs:enumeration value="TOC" />
+            <xs:enumeration value="TODAY" />
+            <xs:enumeration value="TOLL" />
+            <xs:enumeration value="TONALITY" />
+            <xs:enumeration value="TOUCH_APP" />
+            <xs:enumeration value="TOYS" />
+            <xs:enumeration value="TRACK_CHANGES" />
+            <xs:enumeration value="TRAFFIC" />
+            <xs:enumeration value="TRAIN" />
+            <xs:enumeration value="TRAM" />
+            <xs:enumeration value="TRANSFER_WITHIN_A_STATION" />
+            <xs:enumeration value="TRANSFORM" />
+            <xs:enumeration value="TRANSLATE" />
+            <xs:enumeration value="TRENDING_DOWN" />
+            <xs:enumeration value="TRENDING_FLAT" />
+            <xs:enumeration value="TRENDING_UP" />
+            <xs:enumeration value="TUNE" />
+            <xs:enumeration value="TURNED_IN" />
+            <xs:enumeration value="TURNED_IN_NOT" />
+            <xs:enumeration value="TV" />
+            <xs:enumeration value="UNARCHIVE" />
+            <xs:enumeration value="UNDO" />
+            <xs:enumeration value="UNFOLD_LESS" />
+            <xs:enumeration value="UNFOLD_MORE" />
+            <xs:enumeration value="UPDATE" />
+            <xs:enumeration value="USB" />
+            <xs:enumeration value="VERIFIED_USER" />
+            <xs:enumeration value="VERTICAL_ALIGN_BOTTOM" />
+            <xs:enumeration value="VERTICAL_ALIGN_CENTER" />
+            <xs:enumeration value="VERTICAL_ALIGN_TOP" />
+            <xs:enumeration value="VIBRATION" />
+            <xs:enumeration value="VIDEO_CALL" />
+            <xs:enumeration value="VIDEO_LABEL" />
+            <xs:enumeration value="VIDEO_LIBRARY" />
+            <xs:enumeration value="VIDEOCAM" />
+            <xs:enumeration value="VIDEOCAM_OFF" />
+            <xs:enumeration value="VIDEOGAME_ASSET" />
+            <xs:enumeration value="VIEW_AGENDA" />
+            <xs:enumeration value="VIEW_ARRAY" />
+            <xs:enumeration value="VIEW_CAROUSEL" />
+            <xs:enumeration value="VIEW_COLUMN" />
+            <xs:enumeration value="VIEW_COMFY" />
+            <xs:enumeration value="VIEW_COMPACT" />
+            <xs:enumeration value="VIEW_DAY" />
+            <xs:enumeration value="VIEW_HEADLINE" />
+            <xs:enumeration value="VIEW_LIST" />
+            <xs:enumeration value="VIEW_MODULE" />
+            <xs:enumeration value="VIEW_QUILT" />
+            <xs:enumeration value="VIEW_STREAM" />
+            <xs:enumeration value="VIEW_WEEK" />
+            <xs:enumeration value="VIGNETTE" />
+            <xs:enumeration value="VISIBILITY" />
+            <xs:enumeration value="VISIBILITY_OFF" />
+            <xs:enumeration value="VOICE_CHAT" />
+            <xs:enumeration value="VOICEMAIL" />
+            <xs:enumeration value="VOLUME_DOWN" />
+            <xs:enumeration value="VOLUME_MUTE" />
+            <xs:enumeration value="VOLUME_OFF" />
+            <xs:enumeration value="VOLUME_UP" />
+            <xs:enumeration value="VPN_KEY" />
+            <xs:enumeration value="VPN_LOCK" />
+            <xs:enumeration value="WALLPAPER" />
+            <xs:enumeration value="WARNING" />
+            <xs:enumeration value="WATCH" />
+            <xs:enumeration value="WATCH_LATER" />
+            <xs:enumeration value="WB_AUTO" />
+            <xs:enumeration value="WB_CLOUDY" />
+            <xs:enumeration value="WB_INCANDESCENT" />
+            <xs:enumeration value="WB_IRIDESCENT" />
+            <xs:enumeration value="WB_SUNNY" />
+            <xs:enumeration value="WC" />
+            <xs:enumeration value="WEB" />
+            <xs:enumeration value="WEB_ASSET" />
+            <xs:enumeration value="WEEKEND" />
+            <xs:enumeration value="WHATSHOT" />
+            <xs:enumeration value="WIDGETS" />
+            <xs:enumeration value="WIFI" />
+            <xs:enumeration value="WIFI_LOCK" />
+            <xs:enumeration value="WIFI_TETHERING" />
+            <xs:enumeration value="WORK" />
+            <xs:enumeration value="WRAP_TEXT" />
+            <xs:enumeration value="YOUTUBE_SEARCHED_FOR" />
+            <xs:enumeration value="ZOOM_IN" />
+            <xs:enumeration value="ZOOM_OUT" />
+            <xs:enumeration value="ZOOM_OUT_MAP" />
+        </xs:restriction>
+    </xs:simpleType>
+
+
+</xs:schema>
