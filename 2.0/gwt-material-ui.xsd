@@ -53,6 +53,7 @@
     <xs:element name="MaterialModalContent" type="MaterialModalContent" />
     <xs:element name="MaterialModalFooter" type="MaterialModalFooter" />
     <xs:element name="MaterialNavBar" type="MaterialNavBar" />
+    <xs:element name="MaterialNavBarShrink" type="MaterialNavBarShrink" />
     <xs:element name="MaterialNavBrand" type="MaterialNavBrand" />
     <xs:element name="MaterialNavSection" type="MaterialNavSection" />
     <xs:element name="MaterialNoResult" type="MaterialNoResult" />
@@ -138,6 +139,7 @@
             <xs:element name="MaterialModalContent" type="MaterialModalContent" />
             <xs:element name="MaterialModalFooter" type="MaterialModalFooter" />
             <xs:element name="MaterialNavBar" type="MaterialNavBar" />
+            <xs:element name="MaterialNavBarShrink" type="MaterialNavBarShrink" />    
             <xs:element name="MaterialNavBrand" type="MaterialNavBrand" />
             <xs:element name="MaterialNavSection" type="MaterialNavSection" />
             <xs:element name="MaterialNoResult" type="MaterialNoResult" />
