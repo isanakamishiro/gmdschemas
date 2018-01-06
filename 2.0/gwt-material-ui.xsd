@@ -1,13 +1,8 @@
 <?xml version="1.0"?>
-
-<xs:schema
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="urn:import:gwt.material.design.client.ui"
-    xmlns="urn:import:gwt.material.design.client.ui"
-    elementFormDefault="qualified">
-
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:import:gwt.material.design.client.ui" 
+    xmlns="urn:import:gwt.material.design.client.ui" elementFormDefault="qualified">
     <!--elements declaration-->
-
     <xs:element name="MaterialAnchorButton" type="MaterialAnchorButton" />
     <xs:element name="MaterialBadge" type="MaterialBadge" />
     <xs:element name="MaterialBreadcrumb" type="MaterialBreadcrumb" />
@@ -89,8 +84,6 @@
     <!--<xs:element name="MaterialValueBox" type="MaterialValueBox" />-->
     <xs:element name="MaterialVideo" type="MaterialVideo" />
     <xs:element name="MaterialWeather" type="MaterialWeather" />
-
-
     <!--Widget Group-->
     <xs:group name="WidgetGroup">
         <xs:choice>
@@ -139,7 +132,7 @@
             <xs:element name="MaterialModalContent" type="MaterialModalContent" />
             <xs:element name="MaterialModalFooter" type="MaterialModalFooter" />
             <xs:element name="MaterialNavBar" type="MaterialNavBar" />
-            <xs:element name="MaterialNavBarShrink" type="MaterialNavBarShrink" />    
+            <xs:element name="MaterialNavBarShrink" type="MaterialNavBarShrink" />
             <xs:element name="MaterialNavBrand" type="MaterialNavBrand" />
             <xs:element name="MaterialNavSection" type="MaterialNavSection" />
             <xs:element name="MaterialNoResult" type="MaterialNoResult" />
@@ -178,13 +171,11 @@
             <xs:any processContents="lax" />
         </xs:choice>
     </xs:group>
-
     <!--UIObject-->
     <xs:complexType name="UIObject" mixed="true">
         <xs:choice minOccurs="0" maxOccurs="unbounded">
             <xs:group ref="WidgetGroup" />
         </xs:choice>
-
         <!--Basic attributes-->
         <xs:attribute name="ui:field" type="xs:string" />
         <xs:attribute name="visible" type="xs:boolean" />
@@ -196,11 +187,10 @@
         <xs:attribute name="width" type="xs:string" />
         <xs:anyAttribute processContents="lax" />
     </xs:complexType>
-
     <!--Material Widget-->
     <xs:complexType name="MaterialWidget" mixed="true">
         <xs:complexContent>
-            <xs:extension base="UIObject" >
+            <xs:extension base="UIObject">
                 <xs:attribute name="accessKey" type="xs:string" />
                 <xs:attribute name="backgroundColor" type="Colors" />
                 <xs:attribute name="bottom" type="xs:double" />
@@ -247,7 +237,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <!--AbstractButton-->
     <xs:complexType name="AbstractButton" mixed="true">
         <xs:complexContent>
@@ -262,7 +251,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <!--AbstractIconButton-->
     <xs:complexType name="AbstractIconButton" mixed="true">
         <xs:complexContent>
@@ -275,7 +263,23 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
+    <!-- AbstractSideNav -->
+    <xs:complexType name="AbstractSideNav" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget">
+                <xs:attribute name="active" type="xs:integer" />
+                <xs:attribute name="allowBodyScroll" type="xs:boolean" />
+                <xs:attribute name="alwaysShowActivator" type="xs:boolean" />
+                <xs:attribute name="closeOnClick" type="xs:boolean" />
+                <xs:attribute name="edge" type="Edge" />
+                <xs:attribute name="inDuration" type="xs:integer" />
+                <xs:attribute name="outDuration" type="xs:integer" />
+                <xs:attribute name="showOnAttach" type="xs:boolean" />
+                <xs:attribute name="width" type="xs:string" />
+                <xs:attribute name="m:id" type="xs:string" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
     <xs:complexType name="BaseCheckBox" mixed="true">
         <xs:complexContent>
             <xs:extension base="UIObject">
@@ -292,7 +296,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialValueBox" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -317,7 +320,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialNumberBox" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialValueBox">
@@ -327,7 +329,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="ValueBoxBase" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -345,17 +346,12 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
-
     <!--Material Widgets-->
-
     <xs:complexType name="MaterialAnchorButton" mixed="true">
         <xs:complexContent>
-            <xs:extension base="AbstractIconButton">
-            </xs:extension>
+            <xs:extension base="AbstractIconButton"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialBadge" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -363,21 +359,16 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialBreadcrumb" mixed="true">
         <xs:complexContent>
-            <xs:extension base="AbstractIconButton">
-            </xs:extension>
+            <xs:extension base="AbstractIconButton"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialButton" mixed="true">
         <xs:complexContent>
-            <xs:extension base="AbstractIconButton">
-            </xs:extension>
+            <xs:extension base="AbstractIconButton"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCard" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -386,35 +377,26 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCardAction" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCardContent" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCardImage" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCardReveal" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCardTitle" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -427,7 +409,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCheckBox" mixed="true">
         <xs:complexContent>
             <xs:extension base="BaseCheckBox">
@@ -437,7 +418,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialChip" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -454,7 +434,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCollapsible" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -462,21 +441,16 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCollapsibleBody" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCollapsibleHeader" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCollapsibleItem" mixed="true">
         <xs:complexContent>
             <xs:extension base="AbstractButton">
@@ -486,7 +460,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCollection" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -495,7 +468,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCollectionItem" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -505,7 +477,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialCollectionSecondary" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -514,21 +485,16 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialColumn" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialContainer" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialDatePicker" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -542,21 +508,16 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialDivider" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialDoubleBox" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialDropDown" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -570,7 +531,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialFAB" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -579,21 +539,16 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialFABList" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialFloatBox" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialNumberBox">
-            </xs:extension>
+            <xs:extension base="MaterialNumberBox"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialFooter" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -601,21 +556,16 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialFooterCopyright" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialHeader" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialIcon" mixed="true">
         <xs:complexContent>
             <xs:extension base="AbstractButton">
@@ -628,7 +578,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialImage" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -641,7 +590,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialInput" mixed="true">
         <xs:complexContent>
             <xs:extension base="ValueBoxBase">
@@ -652,14 +600,11 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialIntegerBox" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialNumberBox">
-            </xs:extension>
+            <xs:extension base="MaterialNumberBox"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialLabel" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -673,14 +618,11 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialLink" mixed="true">
         <xs:complexContent>
-            <xs:extension base="AbstractIconButton">
-            </xs:extension>
+            <xs:extension base="AbstractIconButton"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialListBox" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -697,14 +639,11 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialLongBox" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialNumberBox">
-            </xs:extension>
+            <xs:extension base="MaterialNumberBox"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialModal" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -716,7 +655,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialModalContent" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialPanel">
@@ -724,14 +662,11 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialModalFooter" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialPanel">
-            </xs:extension>
+            <xs:extension base="MaterialPanel"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialNavBar" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -740,7 +675,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialNavBarShrink" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialNavBar">
@@ -748,7 +682,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialNavBrand" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -759,14 +692,11 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialNavContent" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialNavMenu" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialLink">
@@ -774,7 +704,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialNavSection" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -782,7 +711,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialNoResult" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -796,7 +724,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialPager" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -809,21 +736,16 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialPanel" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialParallax" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialPreLoader" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -831,7 +753,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialProgress" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -841,7 +762,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialRadioButton" mixed="true">
         <xs:complexContent>
             <xs:extension base="UIObject">
@@ -862,7 +782,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialRange" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -874,21 +793,16 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialRow" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialScrollspy" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialSearch" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialValueBox">
@@ -897,50 +811,64 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialSearchResult" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialSection" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialSideNav" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-                <xs:attribute name="alwaysShowActivator" type="xs:boolean" />
-                <xs:attribute name="allowBodyScroll" type="xs:boolean" />
-                <xs:attribute name="showOnAttach" type="xs:boolean" />
-                <xs:attribute name="closeOnClick" type="xs:boolean" />
-                <xs:attribute name="edge" type="Edge" />
-                <xs:attribute name="fixed" type="xs:boolean" />
-                <xs:attribute name="type" type="SideNavType" />
-                <xs:attribute name="width" type="xs:string" />
+            <xs:extension base="AbstractSideNav"></xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="MaterialSideNavCard" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialSideNav"></xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="MaterialSideNavContent" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialWidget"></xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="MaterialSideNavDrawer" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="MaterialSideNav">
+                <xs:attribute name="withHeader" type="xs:boolean" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
+    <xs:complexType name="MaterialSideNavMini" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="AbstractSideNav">
+                <xs:attribute name="expandable" type="xs:boolean" />
+                <xs:attribute name="expandOnClick" type="xs:boolean" />
+                <xs:attribute name="overlay" type="xs:boolean" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="MaterialSideNavPush" mixed="true">
+        <xs:complexContent>
+            <xs:extension base="AbstractSideNav">
+                <xs:attribute name="withHeader" type="xs:boolean" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
     <xs:complexType name="MaterialSlideCaption" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialSlideItem" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialSlider" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -949,7 +877,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialSpinner" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -957,14 +884,11 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialSplashScreen" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialSwitch" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -974,7 +898,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialTab" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -985,21 +908,16 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialTabItem" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialTextArea" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialValueBox">
-            </xs:extension>
+            <xs:extension base="MaterialValueBox"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialTextBox" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialValueBox">
@@ -1007,7 +925,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialTitle" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -1016,14 +933,11 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialTopNav" mixed="true">
         <xs:complexContent>
-            <xs:extension base="MaterialWidget">
-            </xs:extension>
+            <xs:extension base="MaterialWidget"></xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialVideo" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialWidget">
@@ -1032,7 +946,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="MaterialWeather" mixed="true">
         <xs:complexContent>
             <xs:extension base="MaterialPanel">
@@ -1041,7 +954,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <!--Enums-->
     <xs:simpleType name="StyleVisibility">
         <xs:restriction base="xs:string">
@@ -1049,7 +961,6 @@
             <xs:enumeration value="VISIBLE" />
         </xs:restriction>
     </xs:simpleType>
-
     <xs:simpleType name="StyleFontWeight">
         <xs:restriction base="xs:string">
             <xs:enumeration value="BOLD" />
@@ -1058,7 +969,6 @@
             <xs:enumeration value="NORMAL" />
         </xs:restriction>
     </xs:simpleType>
-
     <xs:simpleType name="StyleFloat">
         <xs:restriction base="xs:string">
             <xs:enumeration value="LEFT" />
@@ -1066,14 +976,12 @@
             <xs:enumeration value="RIGHT" />
         </xs:restriction>
     </xs:simpleType>
-
     <xs:simpleType name="CollectionType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="AVATAR" />
             <xs:enumeration value="CHECKBOX" />
         </xs:restriction>
     </xs:simpleType>
-
     <xs:simpleType name="StyleOverflow">
         <xs:restriction base="xs:string">
             <xs:enumeration value="AUTO" />
@@ -1082,7 +990,6 @@
             <xs:enumeration value="VISIBLE" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--Position-->
     <xs:simpleType name="StylePosition">
         <xs:restriction base="xs:string">
@@ -1092,7 +999,6 @@
             <xs:enumeration value="STATIC" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--HideOn-->
     <xs:simpleType name="HideOn">
         <xs:restriction base="xs:string">
@@ -1105,7 +1011,6 @@
             <xs:enumeration value="HIDE_ON_SMALL_DOWN" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--ShowOn-->
     <xs:simpleType name="ShowOn">
         <xs:restriction base="xs:string">
@@ -1117,7 +1022,6 @@
             <xs:enumeration value="SHOW_ON_SMALL" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--TabType-->
     <xs:simpleType name="TabType">
         <xs:restriction base="xs:string">
@@ -1125,25 +1029,15 @@
             <xs:enumeration value="ICON" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--SideNavType-->
-<!--    <xs:simpleType name="SideNavType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="CARD" />
-            <xs:enumeration value="PUSH" />
-            <xs:enumeration value="MINI" />
-            <xs:enumeration value="FIXED" />
-        </xs:restriction>
-    </xs:simpleType>-->
-
+    <!--    <xs:simpleType name="SideNavType"><xs:restriction base="xs:string"><xs:enumeration value="CARD" /><xs:enumeration value="PUSH" /><xs:enumeration value="MINI" /><xs:enumeration value="FIXED" /></xs:restriction></xs:simpleType>-->
     <!--Edge-->
     <xs:simpleType name="Edge">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="GAP" />
-            <xs:enumeration value="NO_GAP" />
+            <xs:enumeration value="LEFT" />
+            <xs:enumeration value="RIGHT" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--RadioButtonType-->
     <xs:simpleType name="RadioButtonType">
         <xs:restriction base="xs:string">
@@ -1151,7 +1045,6 @@
             <xs:enumeration value="NO_GAP" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--ProgressType-->
     <xs:simpleType name="ProgressType">
         <xs:restriction base="xs:string">
@@ -1159,7 +1052,6 @@
             <xs:enumeration value="INDETERMINATE" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--LoaderSize-->
     <xs:simpleType name="LoaderSize">
         <xs:restriction base="xs:string">
@@ -1168,7 +1060,6 @@
             <xs:enumeration value="SMALL" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--NavBarType-->
     <xs:simpleType name="NavBarType">
         <xs:restriction base="xs:string">
@@ -1177,7 +1068,6 @@
             <xs:enumeration value="TALL" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--ModalType-->
     <xs:simpleType name="ModalType">
         <xs:restriction base="xs:string">
@@ -1187,7 +1077,6 @@
             <xs:enumeration value="WINDOW" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--ImageType-->
     <xs:simpleType name="ImageType">
         <xs:restriction base="xs:string">
@@ -1196,7 +1085,6 @@
             <xs:enumeration value="MATERIALBOXED" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--FooterType-->
     <xs:simpleType name="FooterType">
         <xs:restriction base="xs:string">
@@ -1204,7 +1092,6 @@
             <xs:enumeration value="FIXED" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--FABType-->
     <xs:simpleType name="FABType">
         <xs:restriction base="xs:string">
@@ -1212,7 +1099,6 @@
             <xs:enumeration value="HOVER" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--Alignment-->
     <xs:simpleType name="Alignment">
         <xs:restriction base="xs:string">
@@ -1222,7 +1108,6 @@
             <xs:enumeration value="RIGHT" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--InputType-->
     <xs:simpleType name="InputType">
         <xs:restriction base="xs:string">
@@ -1245,7 +1130,6 @@
             <xs:enumeration value="WEEK" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--Orientation-->
     <xs:simpleType name="Orientation">
         <xs:restriction base="xs:string">
@@ -1253,7 +1137,6 @@
             <xs:enumeration value="PORTRAIT" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--MaterialDatePickerType-->
     <xs:simpleType name="MaterialDatePickerType">
         <xs:restriction base="xs:string">
@@ -1263,7 +1146,6 @@
             <xs:enumeration value="YEAR_MONTH_DAY" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--CollapsibleType-->
     <xs:simpleType name="CollapsibleType">
         <xs:restriction base="xs:string">
@@ -1271,7 +1153,6 @@
             <xs:enumeration value="POPOUT" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--CheckBoxType-->
     <xs:simpleType name="CheckBoxType">
         <xs:restriction base="xs:string">
@@ -1279,7 +1160,6 @@
             <xs:enumeration value="INTERMEDIATE" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--Axis-->
     <xs:simpleType name="Axis">
         <xs:restriction base="xs:string">
@@ -1287,7 +1167,6 @@
             <xs:enumeration value="VERTICAL" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--Text align-->
     <xs:simpleType name="TextAlign">
         <xs:restriction base="xs:string">
@@ -1297,7 +1176,6 @@
             <xs:enumeration value="RIGHT" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--Position-->
     <xs:simpleType name="Position">
         <xs:restriction base="xs:string">
@@ -1307,7 +1185,6 @@
             <xs:enumeration value="TOP" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--WavesType-->
     <xs:simpleType name="WavesType">
         <xs:restriction base="xs:string">
@@ -1321,7 +1198,6 @@
             <xs:enumeration value="YELLOW" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--ButtonSize-->
     <xs:simpleType name="ButtonSize">
         <xs:restriction base="xs:string">
@@ -1329,7 +1205,6 @@
             <xs:enumeration value="MEDIUM" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--ButtonType-->
     <xs:simpleType name="ButtonType">
         <xs:restriction base="xs:string">
@@ -1339,7 +1214,6 @@
             <xs:enumeration value="RAISED" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--IconPosition-->
     <xs:simpleType name="IconPosition">
         <xs:restriction base="xs:string">
@@ -1348,7 +1222,6 @@
             <xs:enumeration value="RIGHT" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--IconSize-->
     <xs:simpleType name="IconSize">
         <xs:restriction base="xs:string">
@@ -1358,7 +1231,6 @@
             <xs:enumeration value="TINY" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--IconType-->
     <xs:simpleType name="IconType">
         <xs:restriction base="xs:string">
@@ -2297,7 +2169,6 @@
             <xs:enumeration value="ZOOM_OUT_MAP" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--Colors-->
     <xs:simpleType name="Colors">
         <xs:restriction base="xs:string">
@@ -2305,7 +2176,6 @@
             <xs:enumeration value="BLACK" />
             <xs:enumeration value="WHITE" />
             <xs:enumeration value="TRANSPARENT" />
-
             <xs:enumeration value="BLUE_GREY_LIGHTEN_5" />
             <xs:enumeration value="BLUE_GREY_LIGHTEN_4" />
             <xs:enumeration value="BLUE_GREY_LIGHTEN_3" />
@@ -2316,7 +2186,6 @@
             <xs:enumeration value="BLUE_GREY_DARKEN_2" />
             <xs:enumeration value="BLUE_GREY_DARKEN_3" />
             <xs:enumeration value="BLUE_GREY_DARKEN_4" />
-
             <xs:enumeration value="GREY_LIGHTEN_5" />
             <xs:enumeration value="GREY_LIGHTEN_4" />
             <xs:enumeration value="GREY_LIGHTEN_3" />
@@ -2327,7 +2196,6 @@
             <xs:enumeration value="GREY_DARKEN_2" />
             <xs:enumeration value="GREY_DARKEN_3" />
             <xs:enumeration value="GREY_DARKEN_4" />
-
             <xs:enumeration value="BROWN_LIGHTEN_5" />
             <xs:enumeration value="BROWN_LIGHTEN_4" />
             <xs:enumeration value="BROWN_LIGHTEN_3" />
@@ -2338,7 +2206,6 @@
             <xs:enumeration value="BROWN_DARKEN_2" />
             <xs:enumeration value="BROWN_DARKEN_3" />
             <xs:enumeration value="BROWN_DARKEN_4" />
-
             <xs:enumeration value="DEEP_ORANGE_LIGHTEN_5" />
             <xs:enumeration value="DEEP_ORANGE_LIGHTEN_4" />
             <xs:enumeration value="DEEP_ORANGE_LIGHTEN_3" />
@@ -2353,7 +2220,6 @@
             <xs:enumeration value="DEEP_ORANGE_ACCENT_2" />
             <xs:enumeration value="DEEP_ORANGE_ACCENT_3" />
             <xs:enumeration value="DEEP_ORANGE_ACCENT_4" />
-
             <xs:enumeration value="ORANGE_LIGHTEN_5" />
             <xs:enumeration value="ORANGE_LIGHTEN_4" />
             <xs:enumeration value="ORANGE_LIGHTEN_3" />
@@ -2368,7 +2234,6 @@
             <xs:enumeration value="ORANGE_ACCENT_2" />
             <xs:enumeration value="ORANGE_ACCENT_3" />
             <xs:enumeration value="ORANGE_ACCENT_4" />
-
             <xs:enumeration value="AMBER_LIGHTEN_5" />
             <xs:enumeration value="AMBER_LIGHTEN_4" />
             <xs:enumeration value="AMBER_LIGHTEN_3" />
@@ -2383,7 +2248,6 @@
             <xs:enumeration value="AMBER_ACCENT_2" />
             <xs:enumeration value="AMBER_ACCENT_3" />
             <xs:enumeration value="AMBER_ACCENT_4" />
-
             <xs:enumeration value="YELLOW_LIGHTEN_5" />
             <xs:enumeration value="YELLOW_LIGHTEN_4" />
             <xs:enumeration value="YELLOW_LIGHTEN_3" />
@@ -2398,7 +2262,6 @@
             <xs:enumeration value="YELLOW_ACCENT_2" />
             <xs:enumeration value="YELLOW_ACCENT_3" />
             <xs:enumeration value="YELLOW_ACCENT_4" />
-
             <xs:enumeration value="LIME_LIGHTEN_5" />
             <xs:enumeration value="LIME_LIGHTEN_4" />
             <xs:enumeration value="LIME_LIGHTEN_3" />
@@ -2413,7 +2276,6 @@
             <xs:enumeration value="LIME_ACCENT_2" />
             <xs:enumeration value="LIME_ACCENT_3" />
             <xs:enumeration value="LIME_ACCENT_4" />
-
             <xs:enumeration value="LIGHT_GREEN_LIGHTEN_5" />
             <xs:enumeration value="LIGHT_GREEN_LIGHTEN_4" />
             <xs:enumeration value="LIGHT_GREEN_LIGHTEN_3" />
@@ -2428,7 +2290,6 @@
             <xs:enumeration value="LIGHT_GREEN_ACCENT_2" />
             <xs:enumeration value="LIGHT_GREEN_ACCENT_3" />
             <xs:enumeration value="LIGHT_GREEN_ACCENT_4" />
-
             <xs:enumeration value="GREEN_LIGHTEN_5" />
             <xs:enumeration value="GREEN_LIGHTEN_4" />
             <xs:enumeration value="GREEN_LIGHTEN_3" />
@@ -2443,7 +2304,6 @@
             <xs:enumeration value="GREEN_ACCENT_2" />
             <xs:enumeration value="GREEN_ACCENT_3" />
             <xs:enumeration value="GREEN_ACCENT_4" />
-
             <xs:enumeration value="TEAL_LIGHTEN_5" />
             <xs:enumeration value="TEAL_LIGHTEN_4" />
             <xs:enumeration value="TEAL_LIGHTEN_3" />
@@ -2458,7 +2318,6 @@
             <xs:enumeration value="TEAL_ACCENT_2" />
             <xs:enumeration value="TEAL_ACCENT_3" />
             <xs:enumeration value="TEAL_ACCENT_4" />
-
             <xs:enumeration value="CYAN_LIGHTEN_5" />
             <xs:enumeration value="CYAN_LIGHTEN_4" />
             <xs:enumeration value="CYAN_LIGHTEN_3" />
@@ -2473,7 +2332,6 @@
             <xs:enumeration value="CYAN_ACCENT_2" />
             <xs:enumeration value="CYAN_ACCENT_3" />
             <xs:enumeration value="CYAN_ACCENT_4" />
-
             <xs:enumeration value="LIGHT_BLUE_LIGHTEN_5" />
             <xs:enumeration value="LIGHT_BLUE_LIGHTEN_4" />
             <xs:enumeration value="LIGHT_BLUE_LIGHTEN_3" />
@@ -2488,7 +2346,6 @@
             <xs:enumeration value="LIGHT_BLUE_ACCENT_2" />
             <xs:enumeration value="LIGHT_BLUE_ACCENT_3" />
             <xs:enumeration value="LIGHT_BLUE_ACCENT_4" />
-
             <xs:enumeration value="BLUE_LIGHTEN_5" />
             <xs:enumeration value="BLUE_LIGHTEN_4" />
             <xs:enumeration value="BLUE_LIGHTEN_3" />
@@ -2503,7 +2360,6 @@
             <xs:enumeration value="BLUE_ACCENT_2" />
             <xs:enumeration value="BLUE_ACCENT_3" />
             <xs:enumeration value="BLUE_ACCENT_4" />
-
             <xs:enumeration value="INDIGO_LIGHTEN_5" />
             <xs:enumeration value="INDIGO_LIGHTEN_4" />
             <xs:enumeration value="INDIGO_LIGHTEN_3" />
@@ -2518,7 +2374,6 @@
             <xs:enumeration value="INDIGO_ACCENT_2" />
             <xs:enumeration value="INDIGO_ACCENT_3" />
             <xs:enumeration value="INDIGO_ACCENT_4" />
-
             <xs:enumeration value="DEEP_PURPLE_LIGHTEN_5" />
             <xs:enumeration value="DEEP_PURPLE_LIGHTEN_4" />
             <xs:enumeration value="DEEP_PURPLE_LIGHTEN_3" />
@@ -2533,7 +2388,6 @@
             <xs:enumeration value="DEEP_PURPLE_ACCENT_2" />
             <xs:enumeration value="DEEP_PURPLE_ACCENT_3" />
             <xs:enumeration value="DEEP_PURPLE_ACCENT_4" />
-
             <xs:enumeration value="PURPLE_LIGHTEN_5" />
             <xs:enumeration value="PURPLE_LIGHTEN_4" />
             <xs:enumeration value="PURPLE_LIGHTEN_3" />
@@ -2548,7 +2402,6 @@
             <xs:enumeration value="PURPLE_ACCENT_2" />
             <xs:enumeration value="PURPLE_ACCENT_3" />
             <xs:enumeration value="PURPLE_ACCENT_4" />
-
             <xs:enumeration value="PINK_LIGHTEN_5" />
             <xs:enumeration value="PINK_LIGHTEN_4" />
             <xs:enumeration value="PINK_LIGHTEN_3" />
@@ -2563,7 +2416,6 @@
             <xs:enumeration value="PINK_ACCENT_2" />
             <xs:enumeration value="PINK_ACCENT_3" />
             <xs:enumeration value="PINK_ACCENT_4" />
-
             <xs:enumeration value="RED_LIGHTEN_5" />
             <xs:enumeration value="RED_LIGHTEN_4" />
             <xs:enumeration value="RED_LIGHTEN_3" />
@@ -2580,7 +2432,6 @@
             <xs:enumeration value="RED_ACCENT_4" />
         </xs:restriction>
     </xs:simpleType>
-
     <!--SpinnerColor-->
     <xs:simpleType name="SpinnerColor">
         <xs:restriction base="xs:string">
@@ -2594,5 +2445,4 @@
             <xs:enumeration value="YELLOW_ONLY" />
         </xs:restriction>
     </xs:simpleType>
-
 </xs:schema>
