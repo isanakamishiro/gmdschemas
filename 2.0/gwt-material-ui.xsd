@@ -67,6 +67,11 @@
     <xs:element name="MaterialSearchResult" type="MaterialSearchResult" />
     <xs:element name="MaterialSection" type="MaterialSection" />
     <xs:element name="MaterialSideNav" type="MaterialSideNav" />
+    <xs:element name="MaterialSideNavCard" type="MaterialSideNavCard" />
+    <xs:element name="MaterialSideNavContent" type="MaterialSideNavContent" />
+    <xs:element name="MaterialSideNavDrawer" type="MaterialSideNavDrawer" />
+    <xs:element name="MaterialSideNavMini" type="MaterialSideNavMini" />
+    <xs:element name="MaterialSideNavPush" type="MaterialSideNavPush" />
     <xs:element name="MaterialSlideCaption" type="MaterialSlideCaption" />
     <xs:element name="MaterialSlideItem" type="MaterialSlideItem" />
     <xs:element name="MaterialSlider" type="MaterialSlider" />
@@ -151,6 +156,11 @@
             <xs:element name="MaterialSearchResult" type="MaterialSearchResult" />
             <xs:element name="MaterialSection" type="MaterialSection" />
             <xs:element name="MaterialSideNav" type="MaterialSideNav" />
+            <xs:element name="MaterialSideNavCard" type="MaterialSideNavCard" />
+            <xs:element name="MaterialSideNavContent" type="MaterialSideNavContent" />
+            <xs:element name="MaterialSideNavDrawer" type="MaterialSideNavDrawer" />
+            <xs:element name="MaterialSideNavMini" type="MaterialSideNavMini" />
+            <xs:element name="MaterialSideNavPush" type="MaterialSideNavPush" />
             <xs:element name="MaterialSlideCaption" type="MaterialSlideCaption" />
             <xs:element name="MaterialSlideItem" type="MaterialSlideItem" />
             <xs:element name="MaterialSlider" type="MaterialSlider" />
